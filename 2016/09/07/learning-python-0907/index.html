@@ -182,7 +182,7 @@
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
                 <p>学习教程网站：<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰python教程</a></p>
-<h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><p>###<strong>数据类型与变量</strong>###</p>
+<h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><p>##数据类型与变量##</p>
 <p>转义字符：<code>\</code><br>默认不转义：<code>r&#39;\n\\&#39;</code><br>字符串内部多行：</p>
 <pre><code>&apos;&apos;&apos;line1
     line2
@@ -190,7 +190,7 @@
 </code></pre><p>空值<code>None</code><br>地板除，用<code>//</code>表示</p>
 <pre><code>&gt;&gt;&gt;10//3
 3
-</code></pre><p>###<strong>字符串和编码</strong>###<br>ACSII，1个字节<br>Unicode，通常2个字节，存在服务器，内存中<br>UTF-8，英文1个字节，汉字通常3字节<br>获取字符串整数 </p>
+</code></pre><h2 id="字符串和编码"><a href="#字符串和编码" class="headerlink" title="字符串和编码"></a>字符串和编码</h2><p>ACSII，1个字节<br>Unicode，通常2个字节，存在服务器，内存中<br>UTF-8，英文1个字节，汉字通常3字节<br>获取字符串整数 </p>
 <pre><code>&gt;&gt;&gt;ord(&apos;A&apos;)
 65
 </code></pre><p>编码转换成对应字符 </p>
@@ -205,7 +205,7 @@ b&apos;ABC&apos;
 </code></pre><p>计算字符长度：<code>len(&#39;abc&#39;)</code><br>编码注释：<code>#-*- coding:utf-8 -*-</code><br>格式化字符串：%d-整数，%f-浮点数， %s-字符串，%x-十六进制整数</p>
 <pre><code>&gt;&gt;&gt;&apos;%.2f&apos; % 3.1415926
 &apos;3.14&apos;
-</code></pre><p>###<strong>使用list和tuple</strong>###<br><strong>list</strong></p>
+</code></pre><h2 id="使用list和tuple"><a href="#使用list和tuple" class="headerlink" title="使用list和tuple"></a>使用list和tuple</h2><p><strong>list</strong></p>
 <pre><code>&gt;&gt;&gt;list = [&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
 &gt;&gt;&gt;list[0]
 &apos;0&apos;
@@ -256,21 +256,20 @@ b&apos;ABC&apos;
 (&apos;a&apos;,&apos;b&apos;,[&apos;X&apos;,&apos;Y&apos;])
 </code></pre><p>改变的只是tuple中的list，并不是tuple的元素（指向不变）<br>创建一个不变的tuple，就要保证tuple每个元素不可变<br>整数，浮点数，字符串都是不可变对象</p>
 <p>list和tuple是python内置的有序集合，list可变，tuple不可变，分情况使用。</p>
-<p>###<strong>条件判断</strong></p>
-<pre><code>if &lt;条件判断1&gt;:
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><pre><code>if &lt;条件判断1&gt;:
     &lt;执行语句1&gt;
 elif &lt;条件判断2&gt;:
     &lt;执行语句2&gt;
 else:
     &lt;执行语句3&gt;
 </code></pre><p>if语句从上往下判断，若在某个上判断为True，就忽略剩下的elif和else语句。</p>
-<p>###<strong>循环</strong><br>for…in循环<br>依次把list或tuple中的每一个元素迭代出来<br>range()函数可以生成一个整数序列</p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>for…in循环<br>依次把list或tuple中的每一个元素迭代出来<br>range()函数可以生成一个整数序列</p>
 <pre><code>&gt;&gt;&gt;list(range(5))
 [0,1,2,3,4]
 </code></pre><p>while循环</p>
 <pre><code>while &lt;条件判断&gt;:
     循环体
-</code></pre><p>###<strong>使用dict和set</strong><br><strong>dict</strong>（字典，dictionary）<br>使用key-value存储，具有极快查找速度</p>
+</code></pre><h2 id="使用dict和set"><a href="#使用dict和set" class="headerlink" title="使用dict和set"></a>使用dict和set</h2><p><strong>dict</strong>（字典，dictionary）<br>使用key-value存储，具有极快查找速度</p>
 <pre><code>&gt;&gt;&gt;d = {&apos;Tom&apos;:95,&apos;Sam&apos;:75,&apos;John&apos;:85}
 &gt;&gt;&gt;d[&apos;Tom&apos;]
 95
@@ -326,7 +325,7 @@ True
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python基础"><span class="toc-text">python基础</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python基础"><span class="toc-text">python基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串和编码"><span class="toc-text">字符串和编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用list和tuple"><span class="toc-text">使用list和tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断"><span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-text">循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用dict和set"><span class="toc-text">使用dict和set</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
