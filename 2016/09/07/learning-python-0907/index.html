@@ -17,11 +17,11 @@
 
     <title>
         
-          运用Github Pages和Hexo搭建静态博客｜博文
+          learning-python-0907｜博文
         
     </title>
 
-    <link rel="canonical" href="http://codingwithme.github.io/2016/08/31/hexo-install-with-Github-Pages-1/">
+    <link rel="canonical" href="http://codingwithme.github.io/2016/09/07/learning-python-0907/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -138,7 +138,7 @@
 <style>
 
     header.intro-header{
-        background-image: url('http://cdn.onetea.pw/default-image.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+        background-image: url('http://cdn.onetea.pw/default-image.jpg')
     }
 
 </style>
@@ -148,23 +148,15 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>运用Github Pages和Hexo搭建静态博客</h1>
+                    <h1>learning-python-0907</h1>
                     
                     <span class="meta">
                          作者 Bowen
                          <span>
-                          日期 2016-08-31
+                          日期 2016-09-07
                          </span>
                     </span>
                     <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#Git" title="Git">Git</a>
-                        
-                        <a class="tag" href="/tags/#Github" title="Github">Github</a>
-                        
-                        <a class="tag" href="/tags/#Github Pages" title="Github Pages">Github Pages</a>
-                        
-                        <a class="tag" href="/tags/#博客" title="博客">博客</a>
                         
                     </div>
                 </div>
@@ -173,7 +165,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            运用Github Pages和Hexo搭建静态博客
+            learning-python-0907
         </span>
     </div>
 </header>
@@ -185,59 +177,128 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>一、前言<br>这是一篇使用Github Page和Hexo搭建静态博客的自我总结，在搭建过程中出现的问题也会进行补充。<br>我是一个计算机小白，CSDN和LOFTER等博客，不能说改就改，所以搭建一个属于自己的博客感觉很炫酷。<br>如果你初次接触，先看看下面一些文档，有助于你更好的操作，本教程只针对Windows用户。</p>
-<ul>
-<li><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Git</a> </li>
-<li><a href="https://github.com/" target="_blank" rel="external">Github</a> </li>
-<li><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> </li>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> </li>
-<li><a href="http://www.appinn.com/markdown/#autoescape" target="_blank" rel="external">Markdown语法</a><br>对于搭建教程和使用更多可以参考以下网站：</li>
-<li><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官方文档</a></li>
-<li><a href="https://www.zhihu.com/topic/19851557/hot" target="_blank" rel="external">知乎Hexo话题</a></li>
-</ul>
-<p>二、Git<br>2.1 安装Git<br>官方网站下载安装<a href="http://git-scm.com/download/win" target="_blank" rel="external">Git</a><br>2.2 创建一个仓库<br>在自己的GitHub账号下创建一个新的仓库，命名为username.github.io（username是你的账号名)。<br>2.3 配置Git<br>2.3.1 设置用户名及Email<br>安装完成后需要配置你的Git，就是设置你的用户名和Email，在任意位置右键选择Git Bash，键入</p>
-<pre><code>$ git config --global user.name &quot;username&quot;
-</code></pre><p>$ git config –global user.email “username@example.com”<br>2.3.2 SSH配置<br>为了能在本地使用Git管理Github上面的项目，我们进行SSH key配置。<br>2.3.2.1检查电脑是否有SSH key</p>
-<pre><code>$ ls -al ~/.ssh
-</code></pre><p>如果提示列出文件id_ras.pub和id_rsa，证明已存在SSH key。<br>2.3.2.2 若没有SSH key，生成新的</p>
-<pre><code>$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
-</code></pre><p>之后一路回车就可以了。<br>2.3.2.3 向ssh-agent添加key。<br>首先确保ssh-agent可运行：</p>
-<pre><code>$ ssh-agent -s
-</code></pre><p>然后添加SSH key：</p>
-<pre><code>$ ssh-add ~/.ssh/id_rsa
-</code></pre><p>2.3.2.4 向Github添加SSH key。<br>首先，拷贝key：</p>
-<pre><code>clip &lt; ~/.ssh/id_rsa.pub
-</code></pre><p>然后，在GitHub右上方点击头像，选择”Settings”，在右边的”SSH and GPG keys”,点击”New SSH key”按钮，添加上去。测试：</p>
-<pre><code>$ ssh -T git@github.com
-</code></pre><p>一直回车，最后输入yes，出现这个就是成功了。</p>
-<pre><code>Hi username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><p>三、Hexo<br>3.1 安装Hexo<br>安装之前需要在电脑上安装好以下程序：</p>
-<ul>
-<li><a href="http://git-scm.com/download/win" target="_blank" rel="external">Git</a> </li>
-<li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> </li>
-</ul>
-<p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
-<pre><code>$ npm install -g hexo-cli
-</code></pre><p>3.2 建站<br>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
-<pre><code>$ hexo init folder&gt;
-$ cd &lt;folder&gt;
-$ npm install
-</code></pre><p>这样，我们就已经搭建起本地的Hexo博客了。可以先在对应文件夹下执行以下命令，然后再浏览器输入localhost:4000查看。</p>
-<pre><code>$ hexo generate
-$ hexo server
-</code></pre><p>3.3 配置Hexo<br>打开Hexo根目录下的_config.yml，修改以下代码：</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:username/username.github.io.git
-  branch: master
-</code></pre><p>为了能够使Hexo部署到GitHub上，需要安装一个插件：</p>
-<pre><code>$ npm install hexo-deployer-git --save
-</code></pre><p>然后，执行下列指令即可完成部署：</p>
-<pre><code>$ hexo generate
-$ hexo deploy
-</code></pre><p>之后，可以通过在浏览器键入：username.github.io进行浏览。<br>你已成功完成博客的创建，现在头等大事就是编写属于你自己的文章了，现在开始动手吧。</p>
+                <p>学习教程网站：<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰python教程</a></p>
+<h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><p>###<strong>数据类型与变量</strong>###</p>
+<p>转义字符：<code>\</code><br>默认不转义：<code>r&#39;\n\\&#39;</code><br>字符串内部多行：</p>
+<pre><code>&apos;&apos;&apos;line1
+    line2
+    line3&apos;&apos;&apos;
+</code></pre><p>空值<code>None</code><br>地板除，用<code>//</code>表示</p>
+<pre><code>&gt;&gt;&gt;10//3
+3
+</code></pre><p>###<strong>字符串和编码</strong>###<br>ACSII，1个字节<br>Unicode，通常2个字节，存在服务器，内存中<br>UTF-8，英文1个字节，汉字通常3字节<br>获取字符串整数 </p>
+<pre><code>&gt;&gt;&gt;ord(&apos;A&apos;)
+65
+</code></pre><p>编码转换成对应字符 </p>
+<pre><code>&gt;&gt;&gt;chr(25991)
+&apos;文&apos;
+</code></pre><p>要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。 <code>x = b&#39;ABC&#39;</code> bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes。</p>
+<pre><code>&gt;&gt;&gt;&apos;ABC&apos;.encode(&apos;ascii&apos;)
+b&apos;ABC&apos;
+</code></pre><p>反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode()方法：</p>
+<pre><code>&gt;&gt;&gt;b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;.decode(&apos;utf-8&apos;)
+&apos;中文&apos;
+</code></pre><p>计算字符长度：<code>len(&#39;abc&#39;)</code><br>编码注释：<code>#-*- coding:utf-8 -*-</code><br>格式化字符串：%d-整数，%f-浮点数， %s-字符串，%x-十六进制整数</p>
+<pre><code>&gt;&gt;&gt;&apos;%.2f&apos; % 3.1415926
+&apos;3.14&apos;
+</code></pre><p>###<strong>使用list和tuple</strong>###<br><strong>list</strong></p>
+<pre><code>&gt;&gt;&gt;list = [&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
+&gt;&gt;&gt;list[0]
+&apos;0&apos;
+&gt;&gt;&gt;list[-1]
+&apos;3&apos;
+</code></pre><p>添加元素：</p>
+<pre><code>&gt;&gt;&gt;list.append(&apos;4&apos;)
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;]
+</code></pre><p>指定位置插入元素：</p>
+<pre><code>&gt;&gt;&gt;list.insert(1,&apos;4&apos;)
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;4&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
+</code></pre><p>删除末尾元素：</p>
+<pre><code>&gt;&gt;&gt;list.pop()
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;1&apos;,&apos;2&apos;]
+</code></pre><p>删除指定位置元素：</p>
+<pre><code>&gt;&gt;&gt;list.pop(1)
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;2&apos;,&apos;3&apos;]
+</code></pre><p>替换元素</p>
+<pre><code>&gt;&gt;&gt;list[1] = &apos;4&apos; #赋值
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;4&apos;,&apos;2&apos;,&apos;3&apos;]
+</code></pre><p>list里的数据类型可以不同如<code>list = [&#39;0&#39;,123,True]</code><br>一个list也可以作为一个元素<code>s = [&#39;C&#39;,&#39;C++&#39;,[&#39;Java&#39;,&#39;Python&#39;]]</code>,相当于</p>
+<pre><code>&gt;&gt;&gt;p = [&apos;Java&apos;,&apos;Python&apos;]
+&gt;&gt;&gt;s = [&apos;C&apos;,&apos;C++&apos;,p]
+</code></pre><p>若list中一个元素都没有，<code>list = []</code>，长度为0，<code>len(list) = 0</code><br><strong>tuple</strong></p>
+<pre><code>tuple = (&apos;0&apos;,&apos;1&apos;,&apos;2&apos;)
+</code></pre><p>一旦初始化后不能修改，没有替换，删除等用法，获取元素方法相同如<code>tuple[0] = &#39;0&#39;</code>，因其不可更改所以代码更安全，尽量使用tuple<br>tuple的陷阱<br>定义空的tuple，写成</p>
+<pre><code>&gt;&gt;&gt;t = ()
+&gt;&gt;&gt;t
+()
+</code></pre><p>定义只包含一个元素的tuple</p>
+<pre><code>&gt;&gt;&gt;t = (1)
+&gt;&gt;&gt;t
+1
+</code></pre><p>这个是错误的，因为()既可以表示tuple，也可以表示数学意义上的小括号，python规定，按小括号计算，所以表示只包含一个元素的tuple需要加一个逗号</p>
+<pre><code>&gt;&gt;&gt;t = (1,)
+&gt;&gt;&gt;t
+(1,)
+</code></pre><p>可变的tuple</p>
+<pre><code>&gt;&gt;&gt;t = (&apos;a&apos;,&apos;b&apos;,[&apos;A&apos;,&apos;B&apos;])
+&gt;&gt;&gt;t[2][0] = &apos;X&apos;
+&gt;&gt;&gt;t[2][2] = &apos;Y&apos;
+&gt;&gt;&gt;t
+(&apos;a&apos;,&apos;b&apos;,[&apos;X&apos;,&apos;Y&apos;])
+</code></pre><p>改变的只是tuple中的list，并不是tuple的元素（指向不变）<br>创建一个不变的tuple，就要保证tuple每个元素不可变<br>整数，浮点数，字符串都是不可变对象</p>
+<p>list和tuple是python内置的有序集合，list可变，tuple不可变，分情况使用。</p>
+<p>###<strong>条件判断</strong></p>
+<pre><code>if &lt;条件判断1&gt;:
+    &lt;执行语句1&gt;
+elif &lt;条件判断2&gt;:
+    &lt;执行语句2&gt;
+else:
+    &lt;执行语句3&gt;
+</code></pre><p>if语句从上往下判断，若在某个上判断为True，就忽略剩下的elif和else语句。</p>
+<p>###<strong>循环</strong><br>for…in循环<br>依次把list或tuple中的每一个元素迭代出来<br>range()函数可以生成一个整数序列</p>
+<pre><code>&gt;&gt;&gt;list(range(5))
+[0,1,2,3,4]
+</code></pre><p>while循环</p>
+<pre><code>while &lt;条件判断&gt;:
+    循环体
+</code></pre><p>###<strong>使用dict和set</strong><br><strong>dict</strong>（字典，dictionary）<br>使用key-value存储，具有极快查找速度</p>
+<pre><code>&gt;&gt;&gt;d = {&apos;Tom&apos;:95,&apos;Sam&apos;:75,&apos;John&apos;:85}
+&gt;&gt;&gt;d[&apos;Tom&apos;]
+95
+</code></pre><p>将数据放入dict中，除了初始化外，也可以通过key放入</p>
+<pre><code>&gt;&gt;&gt;d[&apos;Sam&apos;] = 99
+&gt;&gt;&gt;d[&apos;Sam&apos;]
+99
+</code></pre><p>一个key只能对应一个value，多次对一个key放入value，会被覆盖<br>key不存在时，dict会报错，避免key不存在的检测方法：</p>
+<p>1.通过in来判断key</p>
+<pre><code>&gt;&gt;&gt;&apos;John&apos; in d
+True
+</code></pre><p>2.通过dict提供的get方法，不存在返回None，也可指定value</p>
+<pre><code>&gt;&gt;&gt;d.get[&apos;Tom&apos;]
+&gt;&gt;&gt;d.get[&apos;Tom&apos;,90]
+90
+</code></pre><p>删除key，用pop(key)的方法</p>
+<pre><code>&gt;&gt;&gt;d.pop(&apos;Tom&apos;)
+95
+&gt;&gt;&gt;d
+{&apos;Sam&apos;:75,&apos;John&apos;:85}
+</code></pre><p>dict内部存放顺序和key放入顺序无关<br>key必须是不可变对象，list可变所以不可以作为key<br><strong>set</strong><br>set与dict类似，也是一组key的集合，但不存储value，且key不重复,重复元素被过滤</p>
+<pre><code>&gt;&gt;&gt;s = set([1,2,3])
+&gt;&gt;&gt;s
+{1,2,3}
+</code></pre><p>通过<code>add(key)</code>添加元素<br>通过<code>remove(key)</code>删除元素<br>set可以看成数学意义上的无序且无重复元素的集合，因此两个set可以做数学意义上的交集和并集。<br>set也同dict一样，同样不可以放入可变对象，tuple虽然是不可变对象，但其元素可能包含可变对象list<br>不可变对象（str操作）</p>
+<pre><code>&gt;&gt;&gt;a = &apos;abc&apos;
+&gt;&gt;&gt;b = a.replace(&apos;a&apos;,&apos;A&apos;)
+&gt;&gt;&gt;b
+&apos;Abc&apos;
+&gt;&gt;&gt;a
+&apos;abc&apos;
+</code></pre><p><img src="http://cdn.onetea.pw/python_set_0.jpg" alt="此处输入图片的描述"><br>对不可变对象来说，调用对象自身的任意方法，不会改变该对象自身的内容，这些方法只会创建新的对象并返回。</p>
 
 
                 <hr>
@@ -246,13 +307,9 @@ $ hexo deploy
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/09/07/learning-python-0907/" data-toggle="tooltip" data-placement="top" title="learning-python-0907">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/08/30/how-to-use-kindle-1/" data-toggle="tooltip" data-placement="top" title="Kindle初级使用简要说明">Next Post &rarr;</a>
+                            <a href="/2016/08/31/hexo-install-with-Github-Pages-1/" data-toggle="tooltip" data-placement="top" title="运用Github Pages和Hexo搭建静态博客">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -265,7 +322,7 @@ $ hexo deploy
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python基础"><span class="toc-text">python基础</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -286,14 +343,6 @@ $ hexo deploy
                     <a href="/tags/">FEATURED TAGS</a>
                 </h5>
                     <div class="tags">
-                        
-                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
-                        
-                          <a class="tag" href="/tags/#Github" title="Github">Github</a>
-                        
-                          <a class="tag" href="/tags/#Github Pages" title="Github Pages">Github Pages</a>
-                        
-                          <a class="tag" href="/tags/#博客" title="博客">博客</a>
                         
                     </div>
                 </section>
