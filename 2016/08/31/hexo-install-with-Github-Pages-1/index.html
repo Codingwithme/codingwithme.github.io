@@ -203,7 +203,8 @@
 </ul>
 <p>二、Git<br>2.1 安装Git<br>官方网站下载安装<a href="http://git-scm.com/download/win" target="_blank" rel="external">Git</a><br>2.2 创建一个仓库<br>在自己的GitHub账号下创建一个新的仓库，命名为username.github.io（username是你的账号名)。<br>2.3 配置Git<br>2.3.1 设置用户名及Email<br>安装完成后需要配置你的Git，就是设置你的用户名和Email，在任意位置右键选择Git Bash，键入</p>
 <pre><code>$ git config --global user.name &quot;username&quot;
-</code></pre><p>$ git config –global user.email “username@example.com”<br>2.3.2 SSH配置<br>为了能在本地使用Git管理Github上面的项目，我们进行SSH key配置。<br>2.3.2.1检查电脑是否有SSH key</p>
+$ git config --global user.email &quot;username@example.com&quot;
+</code></pre><p>2.3.2 SSH配置<br>为了能在本地使用Git管理Github上面的项目，我们进行SSH key配置。<br>2.3.2.1检查电脑是否有SSH key</p>
 <pre><code>$ ls -al ~/.ssh
 </code></pre><p>如果提示列出文件id_ras.pub和id_rsa，证明已存在SSH key。<br>2.3.2.2 若没有SSH key，生成新的</p>
 <pre><code>$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
