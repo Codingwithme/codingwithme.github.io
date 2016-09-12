@@ -17,11 +17,11 @@
 
     <title>
         
-          【9.7】Python学习笔记｜博文
+          分析汉诺塔的递归问题｜博文
         
     </title>
 
-    <link rel="canonical" href="http://codingwithme.github.io/2016/09/07/learning-python-0907/">
+    <link rel="canonical" href="http://codingwithme.github.io/2016/09/12/hanoi/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -148,19 +148,21 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>【9.7】Python学习笔记</h1>
+                    <h1>分析汉诺塔的递归问题</h1>
                     
                     <span class="meta">
                          作者 Bowen
                          <span>
-                          日期 2016-09-07
+                          日期 2016-09-12
                          </span>
                     </span>
                     <div class="tags text-center">
                         
                         <a class="tag" href="/tags/#python" title="python">python</a>
                         
-                        <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
+                        <a class="tag" href="/tags/#汉诺塔" title="汉诺塔">汉诺塔</a>
+                        
+                        <a class="tag" href="/tags/#递归" title="递归">递归</a>
                         
                     </div>
                 </div>
@@ -169,7 +171,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            【9.7】Python学习笔记
+            分析汉诺塔的递归问题
         </span>
     </div>
 </header>
@@ -181,126 +183,21 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>学习教程网站：<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰python教程</a></p>
-<h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><h2 id="数据类型与变量"><a href="#数据类型与变量" class="headerlink" title="数据类型与变量"></a>数据类型与变量</h2><p>转义字符：<code>\</code><br>默认不转义：<code>r&#39;\n\\&#39;</code><br>字符串内部多行：</p>
-<pre><code>&apos;&apos;&apos;line1
-    line2
-    line3&apos;&apos;&apos;
-</code></pre><p>空值<code>None</code><br>地板除，用<code>//</code>表示</p>
-<pre><code>&gt;&gt;&gt;10//3
-3
-</code></pre><h2 id="字符串和编码"><a href="#字符串和编码" class="headerlink" title="字符串和编码"></a>字符串和编码</h2><p>ACSII，1个字节<br>Unicode，通常2个字节，存在服务器，内存中<br>UTF-8，英文1个字节，汉字通常3字节<br>获取字符串整数 </p>
-<pre><code>&gt;&gt;&gt;ord(&apos;A&apos;)
-65
-</code></pre><p>编码转换成对应字符 </p>
-<pre><code>&gt;&gt;&gt;chr(25991)
-&apos;文&apos;
-</code></pre><p>要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。 <code>x = b&#39;ABC&#39;</code> bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes。</p>
-<pre><code>&gt;&gt;&gt;&apos;ABC&apos;.encode(&apos;ascii&apos;)
-b&apos;ABC&apos;
-</code></pre><p>反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode()方法：</p>
-<pre><code>&gt;&gt;&gt;b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;.decode(&apos;utf-8&apos;)
-&apos;中文&apos;
-</code></pre><p>计算字符长度：<code>len(&#39;abc&#39;)</code><br>编码注释：<code>#-*- coding:utf-8 -*-</code><br>格式化字符串：%d-整数，%f-浮点数， %s-字符串，%x-十六进制整数</p>
-<pre><code>&gt;&gt;&gt;&apos;%.2f&apos; % 3.1415926
-&apos;3.14&apos;
-</code></pre><h2 id="使用list和tuple"><a href="#使用list和tuple" class="headerlink" title="使用list和tuple"></a>使用list和tuple</h2><p><strong>list</strong></p>
-<pre><code>&gt;&gt;&gt;list = [&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
-&gt;&gt;&gt;list[0]
-&apos;0&apos;
-&gt;&gt;&gt;list[-1]
-&apos;3&apos;
-</code></pre><p>添加元素：</p>
-<pre><code>&gt;&gt;&gt;list.append(&apos;4&apos;)
-&gt;&gt;&gt;list
-[&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;]
-</code></pre><p>指定位置插入元素：</p>
-<pre><code>&gt;&gt;&gt;list.insert(1,&apos;4&apos;)
-&gt;&gt;&gt;list
-[&apos;0&apos;,&apos;4&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
-</code></pre><p>删除末尾元素：</p>
-<pre><code>&gt;&gt;&gt;list.pop()
-&gt;&gt;&gt;list
-[&apos;0&apos;,&apos;1&apos;,&apos;2&apos;]
-</code></pre><p>删除指定位置元素：</p>
-<pre><code>&gt;&gt;&gt;list.pop(1)
-&gt;&gt;&gt;list
-[&apos;0&apos;,&apos;2&apos;,&apos;3&apos;]
-</code></pre><p>替换元素</p>
-<pre><code>&gt;&gt;&gt;list[1] = &apos;4&apos; #赋值
-&gt;&gt;&gt;list
-[&apos;0&apos;,&apos;4&apos;,&apos;2&apos;,&apos;3&apos;]
-</code></pre><p>list里的数据类型可以不同如<code>list = [&#39;0&#39;,123,True]</code><br>一个list也可以作为一个元素<code>s = [&#39;C&#39;,&#39;C++&#39;,[&#39;Java&#39;,&#39;Python&#39;]]</code>,相当于</p>
-<pre><code>&gt;&gt;&gt;p = [&apos;Java&apos;,&apos;Python&apos;]
-&gt;&gt;&gt;s = [&apos;C&apos;,&apos;C++&apos;,p]
-</code></pre><p>若list中一个元素都没有，<code>list = []</code>，长度为0，<code>len(list) = 0</code><br><strong>tuple</strong></p>
-<pre><code>tuple = (&apos;0&apos;,&apos;1&apos;,&apos;2&apos;)
-</code></pre><p>一旦初始化后不能修改，没有替换，删除等用法，获取元素方法相同如<code>tuple[0] = &#39;0&#39;</code>，因其不可更改所以代码更安全，尽量使用tuple<br>tuple的陷阱<br>定义空的tuple，写成</p>
-<pre><code>&gt;&gt;&gt;t = ()
-&gt;&gt;&gt;t
-()
-</code></pre><p>定义只包含一个元素的tuple</p>
-<pre><code>&gt;&gt;&gt;t = (1)
-&gt;&gt;&gt;t
-1
-</code></pre><p>这个是错误的，因为()既可以表示tuple，也可以表示数学意义上的小括号，python规定，按小括号计算，所以表示只包含一个元素的tuple需要加一个逗号</p>
-<pre><code>&gt;&gt;&gt;t = (1,)
-&gt;&gt;&gt;t
-(1,)
-</code></pre><p>可变的tuple</p>
-<pre><code>&gt;&gt;&gt;t = (&apos;a&apos;,&apos;b&apos;,[&apos;A&apos;,&apos;B&apos;])
-&gt;&gt;&gt;t[2][0] = &apos;X&apos;
-&gt;&gt;&gt;t[2][2] = &apos;Y&apos;
-&gt;&gt;&gt;t
-(&apos;a&apos;,&apos;b&apos;,[&apos;X&apos;,&apos;Y&apos;])
-</code></pre><p>改变的只是tuple中的list，并不是tuple的元素（指向不变）<br>创建一个不变的tuple，就要保证tuple每个元素不可变<br>整数，浮点数，字符串都是不可变对象</p>
-<p>list和tuple是python内置的有序集合，list可变，tuple不可变，分情况使用。</p>
-<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><pre><code>if &lt;条件判断1&gt;:
-    &lt;执行语句1&gt;
-elif &lt;条件判断2&gt;:
-    &lt;执行语句2&gt;
-else:
-    &lt;执行语句3&gt;
-</code></pre><p>if语句从上往下判断，若在某个上判断为True，就忽略剩下的elif和else语句。</p>
-<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>for…in循环<br>依次把list或tuple中的每一个元素迭代出来<br>range()函数可以生成一个整数序列</p>
-<pre><code>&gt;&gt;&gt;list(range(5))
-[0,1,2,3,4]
-</code></pre><p>while循环</p>
-<pre><code>while &lt;条件判断&gt;:
-    循环体
-</code></pre><h2 id="使用dict和set"><a href="#使用dict和set" class="headerlink" title="使用dict和set"></a>使用dict和set</h2><p><strong>dict</strong>（字典，dictionary）<br>使用key-value存储，具有极快查找速度</p>
-<pre><code>&gt;&gt;&gt;d = {&apos;Tom&apos;:95,&apos;Sam&apos;:75,&apos;John&apos;:85}
-&gt;&gt;&gt;d[&apos;Tom&apos;]
-95
-</code></pre><p>将数据放入dict中，除了初始化外，也可以通过key放入</p>
-<pre><code>&gt;&gt;&gt;d[&apos;Sam&apos;] = 99
-&gt;&gt;&gt;d[&apos;Sam&apos;]
-99
-</code></pre><p>一个key只能对应一个value，多次对一个key放入value，会被覆盖<br>key不存在时，dict会报错，避免key不存在的检测方法：</p>
-<p>1.通过in来判断key</p>
-<pre><code>&gt;&gt;&gt;&apos;John&apos; in d
-True
-</code></pre><p>2.通过dict提供的get方法，不存在返回None，也可指定value</p>
-<pre><code>&gt;&gt;&gt;d.get[&apos;Tom&apos;]
-&gt;&gt;&gt;d.get[&apos;Tom&apos;,90]
-90
-</code></pre><p>删除key，用pop(key)的方法</p>
-<pre><code>&gt;&gt;&gt;d.pop(&apos;Tom&apos;)
-95
-&gt;&gt;&gt;d
-{&apos;Sam&apos;:75,&apos;John&apos;:85}
-</code></pre><p>dict内部存放顺序和key放入顺序无关<br>key必须是不可变对象，list可变所以不可以作为key<br><strong>set</strong><br>set与dict类似，也是一组key的集合，但不存储value，且key不重复,重复元素被过滤</p>
-<pre><code>&gt;&gt;&gt;s = set([1,2,3])
-&gt;&gt;&gt;s
-{1,2,3}
-</code></pre><p>通过<code>add(key)</code>添加元素<br>通过<code>remove(key)</code>删除元素<br>set可以看成数学意义上的无序且无重复元素的集合，因此两个set可以做数学意义上的交集和并集。<br>set也同dict一样，同样不可以放入可变对象，tuple虽然是不可变对象，但其元素可能包含可变对象list<br>不可变对象（str操作）</p>
-<pre><code>&gt;&gt;&gt;a = &apos;abc&apos;
-&gt;&gt;&gt;b = a.replace(&apos;a&apos;,&apos;A&apos;)
-&gt;&gt;&gt;b
-&apos;Abc&apos;
-&gt;&gt;&gt;a
-&apos;abc&apos;
-</code></pre><p><img src="http://cdn.onetea.pw/python_set_0.jpg" alt="此处输入图片的描述"><br>对不可变对象来说，调用对象自身的任意方法，不会改变该对象自身的内容，这些方法只会创建新的对象并返回。</p>
+                <h2 id="汉诺塔（Hanoi-Tower）问题"><a href="#汉诺塔（Hanoi-Tower）问题" class="headerlink" title="汉诺塔（Hanoi Tower）问题"></a>汉诺塔（Hanoi Tower）问题</h2><blockquote>
+<p>古代有一个梵塔，塔内有三个座A、B、C，A座上有64个盘子，盘子大小不等，大的在下，小的在上（如图）。有一个和尚想把这64个盘子从A座移到B座，但每次只能允许移动一个盘子，并且在移动过程中，3个座上的盘子始终保持大盘在下，小盘在上。</p>
+</blockquote>
+<p><img src="http://cdn.onetea.pw/hanoi-1.jpg" alt="汉诺塔1"><br>图1<br>分析：<br>假设A柱上有N块圆盘，以C柱为中转站，先将A柱上的N-1块圆盘转移到B柱上，然后将A柱上最大的圆盘转移到C柱上，最后把B柱上N-1块圆盘转移到C柱上。<br><img src="http://cdn.onetea.pw/hanoi-2.jpg" alt="汉诺塔2"><br>图2<br><img src="http://cdn.onetea.pw/hanoi-3.jpg" alt="汉诺塔3"><br>图3<br><img src="http://cdn.onetea.pw/hanoi-4.jpg" alt="汉诺塔4"><br>图4<br>分三个步骤：<br>step1：将A柱上N-1块圆盘转移到B柱（以C柱为中转，如图2）<br>step2：把A柱最大盘转移到C柱（如图3）<br>step3：将B柱的N-1块圆盘转移到C柱（以A柱为中转，如图4）<br>step1和step3操作原理相同，假设step1转移所需次数为f(n-1)次，则需要总步数的递推公式为f(n)=2f(n-1)+1 （f(n)=2^(n-1)如何推导出来还有疑问）</p>
+<p>采用<strong>数学归纳法</strong>可以证明f(n)=2^(n-1)且f(1)=1</p>
+<p>用 python 语言实现代码如下：</p>
+<pre><code>def move(n,a,b,c)
+    if n == 1:
+        print(&apos;move&apos;,a,&apos;--&gt;&apos;,c)
+        return
+    move(n-1,a,c,b)
+    print(&apos;move&apos;,a,&apos;--&gt;&apos;,c)
+    move(n-1,b,a,c)
+</code></pre><p>还有点迷糊</p>
+<p>参考来源：<br><a href="https://www.zhihu.com/question/24385418" target="_blank" rel="external">如何理解汉诺塔的递归？-知乎</a><br><a href="http://chenqx.github.io/2014/09/29/Algorithm-Recursive-Programming/" target="_blank" rel="external">递归算法详解</a><br><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431756044276a15558a759ec43de8e30eb0ed169fb11000" target="_blank" rel="external">递归函数-廖雪峰的官方网站</a></p>
 
 
                 <hr>
@@ -309,13 +206,9 @@ True
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/09/12/hanoi/" data-toggle="tooltip" data-placement="top" title="分析汉诺塔的递归问题">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/08/31/hexo-install-with-Github-Pages-1/" data-toggle="tooltip" data-placement="top" title="运用Github Pages和Hexo搭建静态博客">Next Post &rarr;</a>
+                            <a href="/2016/09/07/learning-python-0907/" data-toggle="tooltip" data-placement="top" title="【9.7】Python学习笔记">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -328,7 +221,7 @@ True
 
             <div class="hidden-xs col-sm-3 toc-col" >
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python基础"><span class="toc-text">python基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型与变量"><span class="toc-text">数据类型与变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串和编码"><span class="toc-text">字符串和编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用list和tuple"><span class="toc-text">使用list和tuple</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件判断"><span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-text">循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用dict和set"><span class="toc-text">使用dict和set</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#汉诺塔（Hanoi-Tower）问题"><span class="toc-text">汉诺塔（Hanoi Tower）问题</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -352,7 +245,9 @@ True
                         
                           <a class="tag" href="/tags/#python" title="python">python</a>
                         
-                          <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
+                          <a class="tag" href="/tags/#汉诺塔" title="汉诺塔">汉诺塔</a>
+                        
+                          <a class="tag" href="/tags/#递归" title="递归">递归</a>
                         
                     </div>
                 </section>
