@@ -7,17 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="做一根有思想的芦苇">
-    <meta name="keyword"  content="null">
+    <meta name="keyword" content="null">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#60090">
-    <link rel="shortcut icon" href="/img/coffee.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
     <link rel="alternate" type="application/atom+xml" title="博文" href="/atom.xml">
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-          运用Github Pages和Hexo搭建静态博客｜博文
+        运用Github Pages和Hexo搭建静态博客｜博文
         
     </title>
 
@@ -31,30 +32,16 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
 </head>
 
 <style>
 
-    header.intro-header{
+    header.intro-header {
         background-image: url('http://cdn.onetea.pw/default-bgimage.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
-<body ontouchstart="">
+<body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
@@ -67,7 +54,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
                     博文
                 </span>
@@ -107,7 +94,7 @@
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation
     // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
+//    var $body   = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
     var $navbar = document.querySelector('#huxblog_navbar');
     var $collapse = document.querySelector('.navbar-collapse');
@@ -132,24 +119,25 @@
     }
 </script>
 
-    <!-- Main Content -->
-    
-<!-- Image to hack wechat -->
+<!-- Main Content -->
+
 <!--only post-->
 
-    
-        <img class="wechat-title-img" src="http://cdn.onetea.pw/default-image.jpg">
-    
+
+<img class="wechat-title-img"
+     src="http://cdn.onetea.pw/default-image.jpg">
+
 
 <style>
-
-    header.intro-header{
+    
+    header.intro-header {
         background-image: url('http://cdn.onetea.pw/default-image.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
     }
 
+    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
@@ -158,19 +146,23 @@
                     
                     <span class="meta">
                          作者 Bowen
-                         <span>
+                        <span>
                           日期 2016-08-31
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                        <a class="tag" href="/tags/#Git"
+                           title="Git">Git</a>
                         
-                        <a class="tag" href="/tags/#Github" title="Github">Github</a>
+                        <a class="tag" href="/tags/#Github"
+                           title="Github">Github</a>
                         
-                        <a class="tag" href="/tags/#Github Pages" title="Github Pages">Github Pages</a>
+                        <a class="tag" href="/tags/#Github Pages"
+                           title="Github Pages">Github Pages</a>
                         
-                        <a class="tag" href="/tags/#博客" title="博客">博客</a>
+                        <a class="tag" href="/tags/#博客"
+                           title="博客">博客</a>
                         
                     </div>
                 </div>
@@ -188,9 +180,8 @@
 <article>
     <div class="container">
         <div class="row">
-                <!-- Post Container -->
+            <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-
                 <p>一、前言<br>这是一篇使用Github Page和Hexo搭建静态博客的自我总结，在搭建过程中出现的问题也会进行补充。<br>我是一个计算机小白，CSDN和LOFTER等博客，不能说改就改，所以搭建一个属于自己的博客感觉很炫酷。<br>如果你初次接触，先看看下面一些文档，有助于你更好的操作，本教程只针对Windows用户。</p>
 <ul>
 <li><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Git</a> </li>
@@ -246,21 +237,21 @@ deploy:
 $ hexo deploy
 </code></pre><p>之后，可以通过在浏览器键入：username.github.io进行浏览。<br>你已成功完成博客的创建，现在头等大事就是编写属于你自己的文章了，现在开始动手吧。</p>
 
-
                 <hr>
-
                 
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/09/07/learning-python-0907/" data-toggle="tooltip" data-placement="top" title="【9.7】Python学习笔记-python基础">&larr; Previous Post</a>
-                        </li>
+                    <li class="previous">
+                        <a href="/2016/09/07/learning-python-0907/" data-toggle="tooltip" data-placement="top"
+                           title="【9.7】Python学习笔记-python基础">&larr; Previous Post</a>
+                    </li>
                     
                     
-                        <li class="next">
-                            <a href="/2016/08/30/how-to-use-kindle-1/" data-toggle="tooltip" data-placement="top" title="Kindle初级使用简要说明">Next Post &rarr;</a>
-                        </li>
+                    <li class="next">
+                        <a href="/2016/08/30/how-to-use-kindle-1/" data-toggle="tooltip" data-placement="top"
+                           title="Kindle初级使用简要说明">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -270,7 +261,7 @@ $ hexo deploy
 
             </div>
 
-            <div class="hidden-xs col-sm-3 toc-col" >
+            <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
                     
                 </div>
@@ -289,18 +280,22 @@ $ hexo deploy
                 
                 <section>
                     <!-- no hr -->
-                <h5 class="text-center">
-                    <a href="/tags/">FEATURED TAGS</a>
-                </h5>
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                        <a class="tag" href="/tags/#Git"
+                           title="Git">Git</a>
                         
-                          <a class="tag" href="/tags/#Github" title="Github">Github</a>
+                        <a class="tag" href="/tags/#Github"
+                           title="Github">Github</a>
                         
-                          <a class="tag" href="/tags/#Github Pages" title="Github Pages">Github Pages</a>
+                        <a class="tag" href="/tags/#Github Pages"
+                           title="Github Pages">Github Pages</a>
                         
-                          <a class="tag" href="/tags/#博客" title="博客">博客</a>
+                        <a class="tag" href="/tags/#博客"
+                           title="博客">博客</a>
                         
                     </div>
                 </section>
@@ -319,15 +314,12 @@ $ hexo deploy
 
 
 
-
-
-    <!-- Footer -->
-    <!-- Footer -->
+<!-- Footer -->
+<!-- Footer -->
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <span class="text-muted"style="font-size: 14px">双击导航条返回顶部</span>
                 <br>
                 <ul class="list-inline text-center">
                 
@@ -401,7 +393,6 @@ $ hexo deploy
 <!-- Custom Theme JavaScript -->
 <script src="/js/blog.js"></script>
 
-
 <!-- async load function -->
 <script>
     function async(u, c) {
@@ -430,7 +421,7 @@ $ hexo deploy
 
 <!--fastClick.js -->
 <script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         if($nav) FastClick.attach($nav);
     })
@@ -455,8 +446,8 @@ $ hexo deploy
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-    <!--wechat title img-->
-    <img class="wechat-title-img" src="http://cdn.onetea.pw/avatar.jpg">
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://cdn.onetea.pw/avatar.jpg">
 </body>
 
 </html>
