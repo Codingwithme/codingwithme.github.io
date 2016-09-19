@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        【9.12】Python学习笔记-函数｜博文
+        分析汉诺塔的递归问题｜博文
         
     </title>
 
-    <link rel="canonical" href="http://codingwithme.github.io/2016/09/12/learning-python-0912/">
+    <link rel="canonical" href="http://codingwithme.github.io/2016/09/14/hanoi/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -124,13 +124,14 @@
 <!--only post-->
 
 
-<img class="wechat-title-img" src="http://cdn.onetea.pw/default-image.jpg">
+<img class="wechat-title-img"
+     src="http://cdn.onetea.pw/default-image.jpg">
 
 
 <style>
     
     header.intro-header {
-        background-image: url('http://cdn.onetea.pw/default-image.jpg');
+        background-image: url('http://cdn.onetea.pw/default-image.jpg')
     }
 
     
@@ -141,12 +142,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>【9.12】Python学习笔记-函数</h1>
+                    <h1>分析汉诺塔的递归问题</h1>
                     
                     <span class="meta">
                          作者 Bowen
                         <span>
-                          日期 2016-09-12
+                          日期 2016-09-14
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -154,8 +155,11 @@
                         <a class="tag" href="/tags/#python"
                            title="python">python</a>
                         
-                        <a class="tag" href="/tags/#学习笔记"
-                           title="学习笔记">学习笔记</a>
+                        <a class="tag" href="/tags/#汉诺塔"
+                           title="汉诺塔">汉诺塔</a>
+                        
+                        <a class="tag" href="/tags/#递归"
+                           title="递归">递归</a>
                         
                     </div>
                 </div>
@@ -164,7 +168,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            【9.12】Python学习笔记-函数
+            分析汉诺塔的递归问题
         </span>
     </div>
 </header>
@@ -175,76 +179,21 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p><strong>学习教程网站：</strong><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰python教程</a></p>
-<h2 id="四个列表数据类型"><a href="#四个列表数据类型" class="headerlink" title="四个列表数据类型"></a>四个列表数据类型</h2><table><br><tr><br><td>数据类型</td><br><td>特点</td><br><td>示例</td><br></tr><br><td>list</td><br><td>有序集合，可随时删加，可变对象</td><br><td>L=[‘A’,’B’,’C’]</td><br><br><tr><br><td>tuple</td><br><td>不能更改，不可变对象</td><br><td>t=(1,)</td><br></tr><br><tr><br><td>dict</td><br><td>‘key-value’格式，key必须放入不可变对象</td><br><td>d={‘name’:’Tom’,’age’:’23’}</td><br></tr><br><tr><br><td>set</td><br><td>一组key的集合无value，无需不重复</td><br><td>s=([1,2,3])</td><br></tr><br></table>
-
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h2><p>查看官方文档：<a href="http://docs.python.org/3/library/functions.html#abs" target="_blank" rel="external">http://docs.python.org/3/library/functions.html#abs</a><br>数据类型转换</p>
-<pre><code>&gt;&gt;&gt;int(&apos;123&apos;)
-123
-&gt;&gt;&gt;str(100)
-&apos;100&apos;
-&gt;&gt;&gt;bool(&apos;&apos;)
-False
-</code></pre><p>函数名指向一个函数对象的引用，可以把函数名赋值给一个变量</p>
-<pre><code>&gt;&gt;&gt;a = abs #变量a指向abs函数
-&gt;&gt;&gt;a(-1) #所以也可以通过a调用abs函数
-1
-</code></pre><h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p>定义函数需要确定函数名和参数个数</p>
-<pre><code>def 函数名(参数)
-    函数体
-</code></pre><p>若有必要可以先检查参数数据类（用if语句判断数据类型）<br>函数执行完毕也没有return语句时，自动<code>return None</code>。<br>函数可以返回多个值，其实际是一个<code>tuple</code>。<br><code>pass</code>可以用作占位符。<br>导入函数 <code>from abstest import my_abs</code>，通用格式是<code>from 不含.py的文件名 import 函数名</code></p>
-<h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><p>1.位置参数</p>
-<pre><code>def power(x):
-    return x*x
-</code></pre><p>对于power(x)是一个位置函数，调用power(x)函数时，必须传入有且仅有一个参数x。</p>
-<pre><code>def power(x,n):
-    s = 1
-    while n &gt; 0:
-        n = n - 1
-        s = s * n
-    return s
-</code></pre><p>两个位置参数x和n。<br>2.默认参数<br>(1)必选参数在前，默认参数在后<br>(2)如何设置默认函数？<br>当函数有多个参数时，变化大的参数放在前，变化小的参数就可以作为默认参数。<br>(3)使用默认参数有什么好处？<br>降低调用函数的难度。<br>默认参数必须指向不可变对象。</p>
-<pre><code>def power(x,n=2):
-        s = 1
-        while n &gt; 0:
-            n = n - 1
-            s = s * n
-        return s
-</code></pre><p>3.可变参数<br>可变参数指的是传入的参数可变，在一个list或tuple前加一个*号，把list货tuple的元素变成可变参数传进去。</p>
-<pre><code>numbers = [0,1,2,3,4,5,6,7,8,9]
-def calc(*numbers)
-    sum = 0
-    for n in numbers
-        sum = sum + n * n
-    return sum
-</code></pre><p>4.关键字参数<br>关键字参数可以扩展函数的功能，先组装出一个dict，把dict转换成关键字参数传进去，在dict前加**号。<br>示例</p>
-<pre><code>def person(name, age, **kw):
-    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
-</code></pre><p>举个栗子</p>
-<pre><code>&gt;&gt;&gt;extra = {&apos;city&apos;:&apos;Beijing&apos;,&apos;job&apos;:&apos;Engineer&apos;}
-&gt;&gt;&gt;person(&apos;Jack&apos;,24,**extra)
-name:Jack age:24 other:{&apos;city&apos;:&apos;Beijing&apos;,&apos;job&apos;:&apos;Engineer&apos;}
-</code></pre><p><strong>extra把extra这个dict的所有key-value用关键字参数传入函数</strong>kw函数，kw只是获得extra的一份拷贝，对kw改动并不会影响到函数外面的extra。</p>
-<p>5.命名关键字参数<br>函数调用者可以传入任意不受限制的关键字参数，对关键字参数进行检查：</p>
-<pre><code>def person(name,age,**kw)
-    if &apos;city&apos; in kw:
-        pass #验证是否有city
-    if &apos;job&apos; in kw:
-        pass #验证是否有job
-    print(&apos;name:&apos;,name,&apos;age:&apos;,age,&apos;other:&apos;,kw)
-</code></pre><p>若要限制关键字参数，则可以使用命名关键字参数。<br>def person(name,age,<em>,city,job)<br>    print(name,age,city,age)<br>命名关键字参数需要使用一个分隔符</em>，*后面的参数不变，视为命名关键字参数。调用如下：</p>
-<pre><code>&gt;&gt;&gt;person(&apos;Jack&apos;,24,city = &apos;Beijing&apos;,job = &apos;Engineer&apos;)
-Jack 24 Beijing Engineer
-</code></pre><p>若有一个可变参数，则后面跟着的命名关键字参数不需要*号分隔。</p>
-<pre><code>def person(name,age,*args,city,job):
-    print(name,age,args,city,job)
-</code></pre><p>命名关键字参数必须传入参数名，可以缺省（设置默认值），从而调用时可以不传入。</p>
-<p>6.参数组合<br>参数定义的顺序必选参数、默认参数、可变参数、命名关键字参数和关键字参数。</p>
-<pre><code>def f1(a,b,c = 0,*args,**kw):
-    print(&apos;a=&apos;,a,&apos;b=&apos;,b,&apos;c=&apos;,c,&apos;args=&apos;,args,&apos;kw=&apos;,kw)
-def f2(a,b,c = 0,*,d,**kw):
-    print(&apos;a=&apos;,a,&apos;b=&apos;,b,&apos;c=&apos;,c,&apos;d=&apos;,d,&apos;kw=&apos;,kw)
-</code></pre><p>通过一个tuple和dict也可以调用上述函数。对于任意函数都可以通过类似<code>func(*args,**kw)</code>的形式调用，无论参数如何定义。</p>
+                <h2 id="汉诺塔（Hanoi-Tower）问题"><a href="#汉诺塔（Hanoi-Tower）问题" class="headerlink" title="汉诺塔（Hanoi Tower）问题"></a>汉诺塔（Hanoi Tower）问题</h2><blockquote>
+<p>古代有一个梵塔，塔内有三个座A、B、C，A座上有64个盘子，盘子大小不等，大的在下，小的在上（如图）。有一个和尚想把这64个盘子从A座移到B座，但每次只能允许移动一个盘子，并且在移动过程中，3个座上的盘子始终保持大盘在下，小盘在上。</p>
+</blockquote>
+<p><img src="http://cdn.onetea.pw/hanoi-1.jpg" alt="汉诺塔1"><br>图1<br>分析：<br>假设A柱上有N块圆盘，以C柱为中转站，先将A柱上的N-1块圆盘转移到B柱上，然后将A柱上最大的圆盘转移到C柱上，最后把B柱上N-1块圆盘转移到C柱上。<br><img src="http://cdn.onetea.pw/hanoi-2.jpg" alt="汉诺塔2"><br>图2<br><img src="http://cdn.onetea.pw/hanoi-3.jpg" alt="汉诺塔3"><br>图3<br><img src="http://cdn.onetea.pw/hanoi-4.jpg" alt="汉诺塔4"><br>图4<br>分三个步骤：<br>step1：将A柱上N-1块圆盘转移到B柱（以C柱为中转，如图2）<br>step2：把A柱最大盘转移到C柱（如图3）<br>step3：将B柱的N-1块圆盘转移到C柱（以A柱为中转，如图4）<br>step1和step3操作原理相同，假设step1转移所需次数为f(n-1)次，则需要总步数的递推公式为f(n)=2f(n-1)+1 （f(n)=2^(n-1)如何推导出来还有疑问）</p>
+<p>采用<strong>数学归纳法</strong>可以证明f(n)=2^(n-1)且f(1)=1</p>
+<p>用 python 语言实现代码如下：</p>
+<pre><code>def move(n,a,b,c)
+    if n == 1:
+        print(&apos;move&apos;,a,&apos;--&gt;&apos;,c)
+        return
+    move(n-1,a,c,b)
+    print(&apos;move&apos;,a,&apos;--&gt;&apos;,c)
+    move(n-1,b,a,c)
+</code></pre><p>还有点迷糊</p>
+<p>参考来源：<br><a href="https://www.zhihu.com/question/24385418" target="_blank" rel="external">如何理解汉诺塔的递归？-知乎</a><br><a href="http://chenqx.github.io/2014/09/29/Algorithm-Recursive-Programming/" target="_blank" rel="external">递归算法详解</a><br><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431756044276a15558a759ec43de8e30eb0ed169fb11000" target="_blank" rel="external">递归函数-廖雪峰的官方网站</a></p>
 
                 <hr>
                 
@@ -252,14 +201,14 @@ def f2(a,b,c = 0,*,d,**kw):
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/09/14/hanoi/" data-toggle="tooltip" data-placement="top"
-                           title="分析汉诺塔的递归问题">&larr; Previous Post</a>
+                        <a href="/2016/09/19/learn-more-study-less/" data-toggle="tooltip" data-placement="top"
+                           title="斯科特•扬的整体性学习方法">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2016/09/07/learning-python-0907/" data-toggle="tooltip" data-placement="top"
-                           title="【9.7】Python学习笔记-python基础">Next Post &rarr;</a>
+                        <a href="/2016/09/12/learning-python-0912/" data-toggle="tooltip" data-placement="top"
+                           title="【9.12】Python学习笔记-函数">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -272,7 +221,7 @@ def f2(a,b,c = 0,*,d,**kw):
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#四个列表数据类型"><span class="toc-text">四个列表数据类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#调用函数"><span class="toc-text">调用函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义函数"><span class="toc-text">定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数"><span class="toc-text">函数的参数</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#汉诺塔（Hanoi-Tower）问题"><span class="toc-text">汉诺塔（Hanoi Tower）问题</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -297,8 +246,11 @@ def f2(a,b,c = 0,*,d,**kw):
                         <a class="tag" href="/tags/#python"
                            title="python">python</a>
                         
-                        <a class="tag" href="/tags/#学习笔记"
-                           title="学习笔记">学习笔记</a>
+                        <a class="tag" href="/tags/#汉诺塔"
+                           title="汉诺塔">汉诺塔</a>
+                        
+                        <a class="tag" href="/tags/#递归"
+                           title="递归">递归</a>
                         
                     </div>
                 </section>
