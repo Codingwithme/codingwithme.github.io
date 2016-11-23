@@ -1,748 +1,1891 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
-<!-- Head tag -->
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="做一根有思想的芦苇">
-    <meta name="keyword" content="null">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="博文" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <title>
-        
-        博文
-        
-    </title>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-    <link rel="canonical" href="http://codingwithme.github.io/">
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog-style.css">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="做一根有思想的芦苇">
+<meta property="og:type" content="website">
+<meta property="og:title" content="博文">
+<meta property="og:url" content="http://codingwithme.github.io/index.html">
+<meta property="og:site_name" content="博文">
+<meta property="og:description" content="做一根有思想的芦苇">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博文">
+<meta name="twitter:description" content="做一根有思想的芦苇">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://codingwithme.github.io/"/>
+
+
+
+
+
+  <title> 博文 </title>
 </head>
 
-<style>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-    header.intro-header {
-        background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-bgimage.png')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
-" data-ishome = "true" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo">
-                    博文
-                </span>
-                's Blog
-            </a>
-        </div>
+  
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
 
-                    
-                        
-                    
 
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">博文</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">做一根有思想的芦苇</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-<!-- Main Content -->
 
 
-<style>
 
-    .custom-haojen-container .post-preview:nth-of-type(1),
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        text-align: center;
-        background-repeat: no-repeat;
-        border-radius: 3px;
-        background-size: cover;
-        padding: 0;
-        height: 300px;
-        display: table;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.16);
-    }
+ </div>
+    </header>
 
-    /*去掉诗歌的背景图片*/
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
-        background-image: none !important;
-        background-color: rgba(255, 248, 220, 0.5);
-    }
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
 
-    .custom-haojen-container .post-preview:nth-child(1) h2,
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta,
-    .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-        text-shadow: 0 0 40px rgba(0, 0, 0, 1);
-        letter-spacing: 1px;
-        color: #fff;
-        margin-top: 0;
-        padding-left: 60px;
-        padding-right: 60px;
-    }
+  
 
-    .custom-haojen-container .post-preview:nth-child(1) .post-meta {
-        font-size: .9em;
-        font-weight: 300;
-        margin-top: 0;
-    }
+  
+  
+  
 
-    .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
-        letter-spacing: 6px;
-        font-size: 18px;
-        font-family: unset;
-        font-weight: 400;
-        color: rgba(0, 0, 0, .75)
-    }
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/09/25/reading-shisheng/">
 
-    /*不显示摘要*/
-    .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
-        display: none
-    }
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
 
-    /*只第一个显示背景图片*/
-    .custom-haojen-container .post-preview:not(:nth-child(1)) {
-        background-image: none !important;
-    }
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
 
-    /*第一个分界线去掉*/
-    .custom-haojen-container hr:nth-of-type(1) {
-        display: none;
-    }
+    
+      <header class="post-header">
 
-    /*主题*/
-    .custom-haojen-container .post-preview:nth-of-type(1) > a {
-        display: table-cell;
-        vertical-align: middle;
-    }
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/25/reading-shisheng/" itemprop="url">
+                  读完《时生》的一些感悟
+                </a>
+              
+            
+          </h1>
+        
 
-    /*诗词标题*/
-    .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-        font-size: 35px;
-        font-family: STKaiti;
-        color: rgba(0, 0, 0, .8);
-    }
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-25T12:17:52+08:00">
+                2016-09-25
+              </time>
+            
 
-    .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
-        color: #0e2231;
-    }
+            
 
-    @media (max-width: 768px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 240px;
-        }
+            
+          </span>
 
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 28px !important;
-            margin-top: 0;
-        }
+          
 
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 18px;
-            font-weight: 400;
-            padding-left: 0;
-            padding-right: 0;
-        }
+          
+            
+          
 
-        .custom-haojen-container .post-preview:nth-of-type(1) > a {
-            padding: 20px
-        }
-    }
+          
 
-    /*手机屏幕*/
-    @media (max-width: 400px) {
-        .custom-haojen-container .post-preview:nth-child(1) {
-            height: 195px;
-        }
+          
+          
 
-        .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
-            font-size: 20px !important;
-        }
+          
 
-        .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
-            font-size: 16px;
-        }
+          
 
-        .custom-haojen-container .post-preview:nth-child(1) a {
-            padding: 30px 20px;
-        }
-    }
-</style>
+        </div>
+      </header>
+    
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="http://7te822.com1.z0.glb.clouddn.com/avatar.jpg"/>
-                        <h5><a href="/about/">Bowen</a></h5>
-                        <p>计算机小白、学习在路上</p>
-                    </div>
-                </div>
-            </div>
-        </header>
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/#/m/song?id=186055&userid=29839259&auto=1&height=32"></iframe><br>//其中的width=298 height=52 均改为0就看不到了，依然可以播放音乐</p>
+<p>读完《时生》的一些感悟：<br>1.儿子改变了父亲对待生活的态度，父亲成全了儿子想来这世界走一遭的愿望。<br>2.生母的生育之恩大不过养母的养育之恩。<br>3.突然就有一种念头，想回到过去和父亲做朋友。</p>
+<p>就像一位网友说的：</p>
+<blockquote>
+<p>时生是从拓实生命里走出来的，他是时间的孩子。时生就是拓实的未来，就像拓实是麻冈须美子的未来，须美子是爪冢梦作男的未来一样，只有自己心爱的人活着，就有了未来。</p>
+</blockquote>
+<p>注意到了东野圭吾的小说总喜欢用香烟的名字，如《解忧杂货店》、《白夜行》，《时生》也不例外。提到了4种品牌的香烟，七星牌、希望牌、艾古牌和好彩牌等，一方面通过香烟的牌子透露出小说人物的经济水平，另一方面暗示小说发生的时间，不由得让读者与实际联系起来。</p>
+<p>一直很喜欢日本有关家庭的电视剧和电影，这类型的剧总能给人一种洗涤心灵的感受。生活就像一条缓缓流淌的小溪，安静又起伏地向前流着。</p>
+<p>加一条小广告<br><a href="https://www.amazon.cn/b/?t=ca_yh_7-23&amp;node=1841469071" target="_blank" rel="external">亚马逊中国持续15天每天2本免费kindle电子书</a>，看有你喜欢的没？<br>此次限免和优惠的活动时间为：2016年9月23日 00:00:00-2016年10月7日 23:59:59。</p>
+<p>★ 限免预告（不分先后）<br>谍影重重1：伯恩的身份<br>明朝那些事儿(第1部):洪武大帝<br>大秦帝国：第一部黑色裂变 上卷<br>战争事典001之征服罗马 (指文图书-战争事典)<br>中国神仙排行榜<br>尸语者:公安厅从未公开的法医禁忌档案<br>下一个社会的管理（珍藏版） (德鲁克管理经典丛书)<br>安然自在(星云日记1)<br>追忆逝水年华 (译文名著精选)<br>大宋王朝•沉重的黄袍<br>东方快车谋杀案 (午夜文库)<br>祖先(全新升级版) (易中天中华史 1)<br>三体1<br>垮掉的一代 (杰克·凯鲁亚克作品)<br>苗疆蛊事(1-3)(套装共3册)<br>董事会里的战争 (定位经典丛书)<br>异域密码1：泰蛊奇闻<br>这个历史挺靠谱1:袁腾飞讲中国史上(升级修订版)<br>一半是火焰，一半是海水(2015版） (王朔作品精选)<br>六朝怪谈：奇幻人间世<br>白发魔女传-全二册 (梁羽生武侠小说系列)<br>东方的遗产</p>
+<p>限免目录来自kindlefere</p>
+
+          
+        
+      
     </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
 
 
+    <footer class="post-footer">
+      
 
-<div class="post-preview "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-image.jpg')">
-    <a href="/2016/09/25/reading-shisheng/">
-        <h2 class="post-title">
-            读完《时生》的一些感悟
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-25
-        </p>
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/09/21/my-reading-experience-zhihulive/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
         
-        <div class="post-content-preview">
-            <p>
-                //其中的width=298 height=52 均改为0就看不到了，依然可以播放音乐
-读完《时生》的一些感悟：1.儿子改变了父亲对待生活的态度，父亲成全了儿子想来这世界走一遭的愿望。2.生母的生育之恩大不过养母的养育之恩。3.突然就有一种念头，想回到过去和父亲做朋友。
-就像一位网友说的：
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/21/my-reading-experience-zhihulive/" itemprop="url">
+                  【干货】李笑来知乎live分享我的读书经验
+                </a>
+              
+            
+          </h1>
+        
 
-时..
-            </p>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-21T10:09:39+08:00">
+                2016-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
         </div>
-    </a>
-
-</div>
-
-<hr>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
 
-<div class="post-preview "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-image.jpg')">
-    <a href="/2016/09/21/my-reading-experience-zhihulive/">
-        <h2 class="post-title">
-            【干货】李笑来知乎live分享我的读书经验
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-21
-        </p>
+      
+      
+
+      
         
-        <div class="post-content-preview">
-            <p>
-                我第一次参加知乎live的就是李笑来老师的我的读书经验，0.99元的价格真的是业界良心。我自己把李笑来老师的live整理了下笔记，希望对自己也对在看的你有所裨益。
-本次live主要解决的问题：
-我的读书路径是怎样的？在其中都经过了哪些境界的更新？
-我的阅读的目的是什么？
-我如何通过阅读学会各种技..
-            </p>
+          
+            <p>我第一次参加知乎live的就是李笑来老师的<a href="https://www.zhihu.com/lives/757587093366009856" target="_blank" rel="external">我的读书经验</a>，0.99元的价格真的是业界良心。我自己把李笑来老师的live整理了下笔记，希望对自己也对在看的你有所裨益。</p>
+<h2 id="本次live主要解决的问题："><a href="#本次live主要解决的问题：" class="headerlink" title="本次live主要解决的问题："></a>本次live主要解决的问题：</h2><ul>
+<li>我的读书路径是怎样的？在其中都经过了哪些境界的更新？</li>
+<li>我的阅读的目的是什么？</li>
+<li>我如何通过阅读学会各种技能？</li>
+<li>我如何升级自己的「阅读操作系统」？</li>
+</ul>
+<h2 id="一、读书路径与境界更新"><a href="#一、读书路径与境界更新" class="headerlink" title="一、读书路径与境界更新"></a>一、读书路径与境界更新</h2><h3 id="第一阶段：饥不择食"><a href="#第一阶段：饥不择食" class="headerlink" title="第一阶段：饥不择食"></a>第一阶段：饥不择食</h3><p>能读什么就读什么，能读多少就读多少，挑书也是一种逐步积累的能力。别人推荐的书单只是别人的书单，饭好不好吃还要自己尝尝。</p>
+<ol>
+<li>把阅读变成一种习惯</li>
+<li>经常有各种意外的好运，从莫名其妙的地方读到了原本可能不可能获得的知识。</li>
+<li>一不小心就积累了足够的里程——驾驶经验远比驾驶技巧重要得多……</li>
+</ol>
+<h3 id="第二阶段：开始挑书"><a href="#第二阶段：开始挑书" class="headerlink" title="第二阶段：开始挑书"></a>第二阶段：开始挑书</h3><p>挑书的基本价值观：</p>
+<ol>
+<li>非虚构书籍（能够认清现实和未来） </li>
+<li>方法科学论书籍（有繁殖能力的知识）</li>
+</ol>
+<p><em>我自己认为这里的有繁殖能力的知识指的是能够从一个延伸繁殖出更多的知识。</em></p>
+<p>喜欢的类型逐渐倾向于以下：</p>
+<ul>
+<li>非虚构类 </li>
+<li>英文原版 </li>
+<li>心理学 </li>
+<li>经济学 </li>
+<li>策略学 </li>
+<li>脑科学</li>
+</ul>
+<h3 id="第三阶段：阅读学术文献"><a href="#第三阶段：阅读学术文献" class="headerlink" title="第三阶段：阅读学术文献"></a>第三阶段：阅读学术文献</h3><p>认识到学术文献与通俗读物的区别，可以锻炼阅读理解能力</p>
+<h3 id="第四阶段：检索阅读"><a href="#第四阶段：检索阅读" class="headerlink" title="第四阶段：检索阅读"></a>第四阶段：检索阅读</h3><p>有目标的阅读。</p>
+<h3 id="第五阶段：泛读"><a href="#第五阶段：泛读" class="headerlink" title="第五阶段：泛读"></a>第五阶段：泛读</h3><p>目的性没那么强，只是为了解真实的世界，并不一定关注书本的内容。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>从泛到精再到泛，从全盘接受，到部分接受（有了自己的思考和观点），到不能接受的部分也多想想（深入思考）。真正要培养的是阅读和理解的能力，培养自己习惯养成的能力，学会思考，懂得自己想要什么生活。</p>
+<h2 id="二、阅读的目的"><a href="#二、阅读的目的" class="headerlink" title="二、阅读的目的"></a>二、阅读的目的</h2><p>改变生活，知识改变命运，习得新的技能，反思自己的过失。</p>
+<h2 id="三、升级自己的阅读操作系统"><a href="#三、升级自己的阅读操作系统" class="headerlink" title="三、升级自己的阅读操作系统"></a>三、升级自己的阅读操作系统</h2><h3 id="1-不仅要只字不差地读，还要反复地读（针对非虚构书籍）"><a href="#1-不仅要只字不差地读，还要反复地读（针对非虚构书籍）" class="headerlink" title="1.不仅要只字不差地读，还要反复地读（针对非虚构书籍）"></a>1.不仅要只字不差地读，还要反复地读（针对非虚构书籍）</h3><ul>
+<li>别总觉得“专业”这事儿是高高在上，触不可及的——事实上，只要你学习能力专业，无论什么，其实都可以学得比较专业。</li>
+<li>所谓的专业，其实就是提高品位和品味，看热闹的快感和看门道的快感不一样。</li>
+<li>一本书，只要必要，即便是读不懂，也要读完，反复读，还要用在自己的生活中。</li>
+<li>真正有难度的知识结构从来都不是线性的，呈递归的。</li>
+<li>读书学习也是一种社交活动，看书评，从别人的书评中看到和自己不同的角度。</li>
+</ul>
+<h3 id="2-提高阅读理解能力的最有效工具——写作（有效的输出）"><a href="#2-提高阅读理解能力的最有效工具——写作（有效的输出）" class="headerlink" title="2.提高阅读理解能力的最有效工具——写作（有效的输出）"></a>2.提高阅读理解能力的最有效工具——写作（有效的输出）</h3><p>像作者一样阅读，教是最好的学习方法。遇到好书，好段落要反复阅读。写作目标就是写清楚一个观点。写作就是要提炼出书中观点，用自己的观点阐述。</p>
+<h2 id="四、一些有必要说明的细节"><a href="#四、一些有必要说明的细节" class="headerlink" title="四、一些有必要说明的细节"></a>四、一些有必要说明的细节</h2><ol>
+<li>如何看待碎片化阅读？每天腾出固定阅读时间至少阅读一个小时。到最后，一个人的总价值基本上相当于他能够有效集中注意力解决问题的时间长度再乘以那些被解决的问题在多大程度上是这个世界所需要的。</li>
+<li>关于电子书和纸质书的选择，阅读的形式并不重要</li>
+<li>阅读一定要在安静的地方吗？一定要养成可以在嘈杂的环境里看书的习惯。</li>
+<li>提高记忆力和理解力方法就是复述，讲给别人听。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/09/19/learn-more-study-less/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/19/learn-more-study-less/" itemprop="url">
+                  斯科特•扬的整体性学习方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-19T11:18:39+08:00">
+                2016-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
         </div>
-    </a>
-
-</div>
-
-<hr>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
 
-<div class="post-preview "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-image.jpg')">
-    <a href="/2016/09/19/learn-more-study-less/">
-        <h2 class="post-title">
-            斯科特•扬的整体性学习方法
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-19
-        </p>
+      
+      
+
+      
         
-        <div class="post-content-preview">
-            <p>
-                偶然通过秋叶大叔知道了斯科特•扬写的《如何高效学习》，为了提高自己的学习效率，遂来读一读，看了豆瓣的评价，原作者写得蛮好的，只是翻译者略坑，更改原作者的意思，加上自己的理解，可惜本人能力有限，英语水平不高，只能暂时看译本了。下面把斯科特•扬的方法做个总结。
-吃饭模型学习法学得好的同学总是将知识关..
-            </p>
+          
+            <p>偶然通过秋叶大叔知道了斯科特•扬写的<a href="https://book.douban.com/subject/25783654/" target="_blank" rel="external">《如何高效学习》</a>，为了提高自己的学习效率，遂来读一读，看了豆瓣的评价，原作者写得蛮好的，只是翻译者略坑，更改原作者的意思，加上自己的理解，可惜本人能力有限，英语水平不高，只能暂时看译本了。下面把斯科特•扬的方法做个总结。</p>
+<h2 id="吃饭模型学习法"><a href="#吃饭模型学习法" class="headerlink" title="吃饭模型学习法"></a>吃饭模型学习法</h2><p>学得好的同学总是将知识关联起来，努力寻找知识之间的联系，从多个角度看问题，跳出学科内部，站在外面看学科。<br><img src="http://cdn.onetea.pw/2016/09/19/eatfood.png" alt="吃饭模型"><br>《如何高效学习》是一本行动指南，共有两个主要目标：第一整体性学习（holistic learning）策略为你提供一个如何学得更好的模型；第二是提供一系列学习技术。</p>
+<h2 id="整体性学习策略"><a href="#整体性学习策略" class="headerlink" title="整体性学习策略"></a>整体性学习策略</h2><p>整体性学习基于三种主要观点：</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>结构就是一系列紧密联系的知识，建立知识结构时，需要在各种知识之间建立尽可能多的联系。三种成熟的结构是感知结构、关系结构和基础数学结构。</p>
+<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>模型是简化的结构，模型的目的就是压缩信息。模型就像是结构的种子，是一座一座建筑的地基和框架，是知识最核心的概念，在此基础上将引伸出全部知识。</p>
+<h3 id="高速公路"><a href="#高速公路" class="headerlink" title="高速公路"></a>高速公路</h3><p>高速公路是结构与结构之间的联系。</p>
+<h2 id="整体性学习技术"><a href="#整体性学习技术" class="headerlink" title="整体性学习技术"></a>整体性学习技术</h2><h3 id="获取阶段"><a href="#获取阶段" class="headerlink" title="获取阶段"></a>获取阶段</h3><p>获取阶段的目标是获取的信息要准确，信息量要尽量压缩。</p>
+<ol>
+<li>获取信息三个目标：<ul>
+<li>简化<br>简化就是在获取信息中将无用的信息尽量删除掉。</li>
+<li>容量<br>获取尽可能多的信息。</li>
+<li>速度<br>提高获取信息的速度，要在保证效率的前提之下。</li>
+</ul>
+</li>
+<li>获取信息的方法：<ul>
+<li><strong>快速阅读</strong><br>指读法<br>练习阅读法（训练自己以尽可能快的速度理解所读内容）<br>积极阅读法（需要解决的问题）<br>a.这一节中主要观点是什么？<br>b.我怎样才能记住主要观点？<br>c.我要怎样将主要观点扩展开并应用它？</li>
+<li><strong>笔记流</strong>（目标是提供一个联系所有学到东西的平台）<br>写下最主要的观点，在这个观点与其他观点之间连上箭头，注明它们之间的关系，可以写下各种主要观点，也可以将观点与图像、图表以及其他主题联系。<br>a.混合型笔记流（记录和扩展）<br>通过减少笔记内容或者增加各种联系或图表，学习变得更具整体性，但可读性降低。<br>b.课下笔记流<br>课堂上按常规记笔记，下课后根据笔记内容制作标准笔记流，兼顾了可读性和理解性。<br>c.评注流<br>先写下最关键的信息，然后在信息之间加入联系。<br>笔记流重点记录联系和按照自己理解的方式给信息分类。</li>
+</ul>
+</li>
+<li><p>信息结构</p>
+<ul>
+<li><p>随意信息<br>随意信息是指一系列事实、日期、定义和规则，其特点是便于理解，但逻辑性差。<br>随意信息的处理方法（需要不断练习）：<br>a.联想法<br>创造顺序（列清单）<br>给清单中条目之间创造联系<br>在第一个条目与出发物之间建立联系<br>b.挂钩法<br>与联想法类似，在每个条目与事先建立好，容易回忆的0~12的视觉符号相联系。<br>c.信息压缩<br>信息压缩的目的是减少信息容量，寻找信息之间的联系。通过记忆术（用一个短语或单词储存数个信息）、图像联系（用一张图把几个信息联系起来）、笔记压缩法（将一大堆需要学习的知识减少到几页的笔记）3种方法压缩信息。</p>
+</li>
+<li><p>观点信息<br>观点信息是有争论的信息，能表示出作者的看法和观点。图表法对观点是非常有用的，可以帮助你在阅读中提取出关键思想。</p>
+</li>
+<li><p>过程信息<br>过程信息是讲述一系列的动作步骤，这类信息最重要的是多练，熟能生巧。</p>
+</li>
+<li>具体信息<br>具体信息指那些可以可以在实际中观察到、听到、触到的信息。</li>
+<li>抽象信息<br>抽象信息难以理解，但逻辑性强。</li>
+</ul>
+</li>
+</ol>
+<p><strong>获取阶段的测试</strong><br>以前是否看过或者听过这个知识吗？</p>
+<p><strong>获取信息遇到的问题</strong></p>
+<ol>
+<li>阅读和听讲速度慢</li>
+<li>需要反复阅读</li>
+</ol>
+<p>解决：养成良好的学习、阅读和记笔记的习惯。</p>
+<h3 id="理解阶段"><a href="#理解阶段" class="headerlink" title="理解阶段"></a>理解阶段</h3><p>整体性学习过程中对信息理解有三个层次：理解阶段、拓展阶段和应用阶段。<br><strong>费曼技巧</strong>：<br>理查德·菲利普斯·费曼 (Richard Phillips Feynman)在他的自传中提到曾纠结于某篇艰深的论文，他的办法是，仔细审阅这篇论文的辅助材料，直到他掌握了相关基础知识，足以理解其中艰深想法为止。<br>费曼技巧亦同此理，对付一个知识枝节繁杂如丝，富有内涵的想法，应该分而化之，切成小知识块，再逐个对付，你最终能填补所有缺口，否则这些缺口将阻挠你理解这个想法。<br>费曼技巧的学习步骤：</p>
+<ol>
+<li>选择要学习的概念</li>
+<li>用自己的理解说明这个概念，并记录下来</li>
+<li>当感到困惑，重复上面步骤</li>
+<li>尽量用直白的语言描述它，或者找一个恰当的比喻以更好地理解它</li>
+</ol>
+<p><strong>理解阶段的测试</strong><br>理解知识的含义吗？（至少是字面的意思）</p>
+<p><strong>理解信息遇到的问题</strong></p>
+<ol>
+<li>虽然在看书，不知道作者在说的是什么</li>
+<li>笔记虽然很清晰完美，但不明白是什么意思</li>
+</ol>
+<p>解决：若理解有困难，不如换一本易懂的书，可以放慢阅读速度，寻找不同的说法。</p>
+<h3 id="拓展阶段"><a href="#拓展阶段" class="headerlink" title="拓展阶段"></a>拓展阶段</h3><p>拓展阶段需要应用模型来简化和扩展自己的结构，同时也要扩展对信息的理解，包括信息的由来（why？）以及是怎样与其他信息联系在一起的。<br>拓展的三种主要方式：</p>
+<ol>
+<li>深度拓展（知识背景探究）<br>深度拓展需要在信息内部创造联系。</li>
+<li>横向拓展<br>横向拓展需要在知识周围建立联系，建立模型，在模型与原知识之间建立联系。</li>
+<li>纵向拓展<br>纵向拓展要求在结构间建立高速通道，比喻法和内在化是最好的办法。不同知识之间的联系。</li>
+</ol>
+<p><br></p>
+<h4 id="联系观点"><a href="#联系观点" class="headerlink" title="联系观点"></a>联系观点</h4><p>联系观点就是理解拓展这些获取到的知识。<br>把知识分为两类：</p>
+<ul>
+<li>困难信息<br>困难信息可能是随意信息、抽象信息。</li>
+<li>关键信息<br>关键信息就是我们学到的基础知识。</li>
+</ul>
+<p><strong>使用联想法形成三个模型</strong><br> <strong>1. 比喻法</strong><br> 比喻就是在不熟悉的知识和熟悉的知识之间架起一座沟通的桥梁。抽象信息最适合比喻法，找出一个比喻的方法</p>
+<ul>
+<li>确定你要深入理解和记忆的信息</li>
+<li>在你的个人经验中寻找与信息<strong>部分相似</strong>的东西</li>
+<li>重复上述过程，检查比喻不恰当的地方</li>
+</ul>
+<p>运用比喻法的技巧</p>
+<ul>
+<li>要有寻找比喻的欲望</li>
+<li>注意第一个出现在脑海中的念头</li>
+<li>优化和测试你的比喻</li>
+</ul>
+<p><strong>2. 内在化</strong><br> 内在化指给脑海中出现的头像加上声音、触觉和情感。具体信息内在化效果最好。内在化就是将你不熟悉的信息类型转化成你容易理解和联系的信息类型。如何进行内在化：</p>
+<ul>
+<li>明确你要内在化的概念</li>
+<li>在脑海中建立图像</li>
+<li>让你脑海中的图像动起来</li>
+<li>加入其他感官和更多情感</li>
+<li>不断重复优化图像，直到你一想到它就能回忆起知识</li>
+</ul>
+<p><strong>比喻内在化</strong>就是先用一个比喻代替抽象信息，然后进行内在化。</p>
+<p><strong>3. 图表法</strong><br>图表法就是观点流，把不同的概念联系起来。三种主要的图表类型：</p>
+<ul>
+<li>流程图<br>流程图是从最原始的观点出发，逐步画出其他相关的观点来，呈线性相关。</li>
+<li>概念图<br>概念图是观点之间的内在联系，从最重要的观点出发，不断发出分支细化知识以及分解观点。</li>
+<li>图像<br>图像强调用简单的涂鸦代替文字，来描述观点之间的联系。</li>
+</ul>
+<p>将图表与比喻和内在化结合在一起，以加深对知识的理解。</p>
+<p><strong>拓展阶段的测试</strong><br>我知道知识知识是从何而来，与哪些知识有关系吗？</p>
+<p><strong>拓展信息遇到的问题</strong><br>缺少灵活性，不能将所学知识与其他学过的知识联系在一起，不能举一反三、触类旁通。</p>
+<h3 id="纠错阶段"><a href="#纠错阶段" class="headerlink" title="纠错阶段"></a>纠错阶段</h3><p>纠错就是在整体性学习中做修剪工作，添加一些特殊的例子，删除一些现实中不存在的联系。纠错可以采用阅读与你观点相反的书籍，或者把结论放在现实世界中看看等方法。</p>
+<p><strong>纠错阶段的测试</strong><br>我删除了那些不恰当的联系吗？我删除了那些错误的结论了吗？</p>
+<p><strong>纠错遇到的问题</strong><br>错误联系太多。</p>
+<p>解决：可能是你对建立的联系没有做到足够的检查</p>
+<h3 id="应用阶段"><a href="#应用阶段" class="headerlink" title="应用阶段"></a>应用阶段</h3><p>应用是学习的最终目的，简单说就是学以致用。</p>
+<p><strong>知识的延伸</strong></p>
+<ol>
+<li>实际应用</li>
+<li>模型纠错（不断练习实践）</li>
+<li>以项目为基础的学习（设定一个目标）</li>
+</ol>
+<ul>
+<li>从小项目开始</li>
+<li>记录下项目完成的过程</li>
+<li>创造一个有意义的目标</li>
+</ul>
+<p><strong>应用阶段的测试</strong><br>我将知识应用到实际生活中了吗？</p>
+<p><strong>应用遇到的问题</strong><br>解决：更多地去实践，抛开书本，走出去，去做实验，去接触生活，去融入社会。</p>
+<p>整体性学习五个阶段并不是严格按照线性关系进行了，可以跳跃进行。仅仅阅读整体性学习的观点是不够的，<strong>一定要把知识变成一种行动上的习惯</strong>。</p>
+<h2 id="高效率学习"><a href="#高效率学习" class="headerlink" title="高效率学习"></a>高效率学习</h2><h3 id="能量管理"><a href="#能量管理" class="headerlink" title="能量管理"></a>能量管理</h3><ol>
+<li>增加你的能量储备<br>多运动，睡眠充足，多喝水。</li>
+<li>将线性日程表换成循环式的<br>一周休息一天，晚上不干活，设定90分钟专注某件事（番茄工作管理）。</li>
+</ol>
+<h3 id="不要“学习”（Don’t-study）"><a href="#不要“学习”（Don’t-study）" class="headerlink" title="不要“学习”（Don’t study）"></a>不要“学习”（Don’t study）</h3><p>不用“学习”是指无效的学习，无意义的学习，尽信书不如无书。</p>
+<h3 id="绝不拖延"><a href="#绝不拖延" class="headerlink" title="绝不拖延"></a>绝不拖延</h3><p>制作周/日目标体系</p>
+<ol>
+<li>每周周末，列一个清单，包括所有任务、作业以及你想在下一周完成的读书和学习活动。</li>
+<li>每天晚上，检查周计划，列出明日目标清单。</li>
+</ol>
+<p>周/日目标体系的优点</p>
+<ol>
+<li>可以缓解你做决策的应激。</li>
+<li>防止做一项大任务时耽搁不前，依赖每周每日目标，你会有时间紧迫感。</li>
+<li>帮助你分配工作量。</li>
+</ol>
+<h3 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h3><p>批处理就是把那些类似、零散的工作集中起来一次做完。<br>批处理的技巧：</p>
+<ol>
+<li>将工作量小的零散工作放在一起</li>
+<li>一次性完成工作</li>
+<li>提高注意力阀值</li>
+</ol>
+<h3 id="有组织"><a href="#有组织" class="headerlink" title="有组织"></a>有组织</h3><ol>
+<li>所有物品都放在固定位置</li>
+<li>随身携带记事本，随时记录</li>
+<li>坚持日历和做事清单</li>
+</ol>
+<h2 id="自学（自我教育）"><a href="#自学（自我教育）" class="headerlink" title="自学（自我教育）"></a>自学（自我教育）</h2><p>自学能提高你的学习能力，自学需要注意的一些问题</p>
+<h3 id="建立良好的学习习惯"><a href="#建立良好的学习习惯" class="headerlink" title="建立良好的学习习惯"></a>建立良好的学习习惯</h3><ol>
+<li>每日阅读</li>
+<li>每日练习（巩固提升对知识的理解）</li>
+<li>每日目标（避免碎片化地获取知识）</li>
+</ol>
+<p><strong>怎样养成每日习惯</strong></p>
+<ol>
+<li>坚持某个习惯30天</li>
+<li>一直坚持下去</li>
+<li>享受这个习惯</li>
+<li>寻找最适合习惯养成的时段</li>
+</ol>
+<h3 id="克服挫折障碍"><a href="#克服挫折障碍" class="headerlink" title="克服挫折障碍"></a>克服挫折障碍</h3><p>克服自学过程中的挫折感是学习动机的问题。</p>
+<p>减小挫折的小技巧：</p>
+<ol>
+<li>写下任何障碍</li>
+<li>使用网络</li>
+<li>找一本关于“怎么做”的工具书</li>
+<li>换一个角度试试</li>
+</ol>
+<h3 id="设立适当的学习目标"><a href="#设立适当的学习目标" class="headerlink" title="设立适当的学习目标"></a>设立适当的学习目标</h3><p>自学过程中最大的问题是缺乏系统的安排、没有目标、缺少计划和方向。设定一个吸引人的学习目标会给学习者带来强大的学习动力。</p>
+<p>设定学习目标的小技巧：</p>
+<ol>
+<li>所有的目标都写下来</li>
+<li>让目标客观化</li>
+<li>设定有些困难，但努力一把也可以达到的截止期限</li>
+<li>将目标的完成转化为每周每日的具体行动</li>
+<li>经常看看你的目标</li>
+</ol>
+<h2 id="参考资料网站"><a href="#参考资料网站" class="headerlink" title="参考资料网站"></a>参考资料网站</h2><ol>
+<li><a href="https://book.douban.com/subject/1884867/" target="_blank" rel="external">《The Power of Full Engagement》</a></li>
+<li><a href="https://book.douban.com/subject/4826033/" target="_blank" rel="external">《全力以赴:高效能人士的精力管理手册》</a></li>
+<li><a href="https://www.scotthyoung.com/blog/2008/02/06/20-tips-for-batching-to-save-time-and-cut-stress/" target="_blank" rel="external">20 Tips for Batching to Save Time and Cut Stress</a></li>
+<li><a href="https://www.scotthyoung.com/blog/2006/05/09/introduction-habitual-mastery-series/" target="_blank" rel="external">Introduction – Habitual Mastery (Series)</a></li>
+<li><a href="https://www.scotthyoung.com/blog/sales-pages/how-to-change-a-habit/" target="_blank" rel="external">How to Change a Habit</a></li>
+<li><a href="http://web.mit.edu/" target="_blank" rel="external">MIT</a></li>
+<li><a href="https://www.scotthyoung.com/blog/" target="_blank" rel="external">Scott H Young Blog</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/09/14/hanoi/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/14/hanoi/" itemprop="url">
+                  分析汉诺塔的递归问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-14T10:34:51+08:00">
+                2016-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
         </div>
-    </a>
-
-</div>
-
-<hr>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
 
-<div class="post-preview "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-image.jpg')">
-    <a href="/2016/09/14/hanoi/">
-        <h2 class="post-title">
-            分析汉诺塔的递归问题
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-14
-        </p>
+      
+      
+
+      
         
-        <div class="post-content-preview">
-            <p>
-                汉诺塔（Hanoi Tower）问题
-古代有一个梵塔，塔内有三个座A、B、C，A座上有64个盘子，盘子大小不等，大的在下，小的在上（如图）。有一个和尚想把这64个盘子从A座移到B座，但每次只能允许移动一个盘子，并且在移动过程中，3个座上的盘子始终保持大盘在下，小盘在上。
+          
+            <h2 id="汉诺塔（Hanoi-Tower）问题"><a href="#汉诺塔（Hanoi-Tower）问题" class="headerlink" title="汉诺塔（Hanoi Tower）问题"></a>汉诺塔（Hanoi Tower）问题</h2><blockquote>
+<p>古代有一个梵塔，塔内有三个座A、B、C，A座上有64个盘子，盘子大小不等，大的在下，小的在上（如图）。有一个和尚想把这64个盘子从A座移到B座，但每次只能允许移动一个盘子，并且在移动过程中，3个座上的盘子始终保持大盘在下，小盘在上。</p>
+</blockquote>
+<p><img src="http://cdn.onetea.pw/hanoi-1.jpg" alt="汉诺塔1"><br>图1<br>分析：<br>假设A柱上有N块圆盘，以C柱为中转站，先将A柱上的N-1块圆盘转移到B柱上，然后将A柱上最大的圆盘转移到C柱上，最后把B柱上N-1块圆盘转移到C柱上。<br><img src="http://cdn.onetea.pw/hanoi-2.jpg" alt="汉诺塔2"><br>图2<br><img src="http://cdn.onetea.pw/hanoi-3.jpg" alt="汉诺塔3"><br>图3<br><img src="http://cdn.onetea.pw/hanoi-4.jpg" alt="汉诺塔4"><br>图4<br>分三个步骤：<br>step1：将A柱上N-1块圆盘转移到B柱（以C柱为中转，如图2）<br>step2：把A柱最大盘转移到C柱（如图3）<br>step3：将B柱的N-1块圆盘转移到C柱（以A柱为中转，如图4）<br>step1和step3操作原理相同，假设step1转移所需次数为f(n-1)次，则需要总步数的递推公式为f(n)=2f(n-1)+1 （f(n)=2^(n-1)如何推导出来还有疑问）</p>
+<p>采用<strong>数学归纳法</strong>可以证明f(n)=2^(n-1)且f(1)=1</p>
+<p>用 python 语言实现代码如下：</p>
+<pre><code>def move(n,a,b,c)
+    if n == 1:
+        print(&apos;move&apos;,a,&apos;--&gt;&apos;,c)
+        return
+    move(n-1,a,c,b)
+    print(&apos;move&apos;,a,&apos;--&gt;&apos;,c)
+    move(n-1,b,a,c)
+</code></pre><p>还有点迷糊</p>
+<p>参考来源：<br><a href="https://www.zhihu.com/question/24385418" target="_blank" rel="external">如何理解汉诺塔的递归？-知乎</a><br><a href="http://chenqx.github.io/2014/09/29/Algorithm-Recursive-Programming/" target="_blank" rel="external">递归算法详解</a><br><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431756044276a15558a759ec43de8e30eb0ed169fb11000" target="_blank" rel="external">递归函数-廖雪峰的官方网站</a></p>
 
-图1分析：假设A柱上有..
-            </p>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/09/12/learning-python-0912/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/12/learning-python-0912/" itemprop="url">
+                  【9.12】Python学习笔记-函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-12T16:22:44+08:00">
+                2016-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
         </div>
-    </a>
-
-</div>
-
-<hr>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
 
-<div class="post-preview  "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-image.jpg')">
-    <a href="/2016/09/12/learning-python-0912/">
-        <h2 class="post-title">
-            【9.12】Python学习笔记-函数
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-12
-        </p>
+      
+      
+
+      
         
-        <div class="post-content-preview">
-            <p>
-                学习教程网站：廖雪峰python教程
-四个列表数据类型数据类型特点示例list有序集合，可随时删加，可变对象L=[‘A’,’B’,’C’]tuple不能更改，不可变对象t=(1,)dict‘key-value’格式，key必须放入不可变对象d={‘name’:’Tom’,’age’:’23’}s..
-            </p>
+          
+            <p><strong>学习教程网站：</strong><a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰python教程</a></p>
+<h2 id="四个列表数据类型"><a href="#四个列表数据类型" class="headerlink" title="四个列表数据类型"></a>四个列表数据类型</h2><table><br><tr><br><td>数据类型</td><br><td>特点</td><br><td>示例</td><br></tr><br><td>list</td><br><td>有序集合，可随时删加，可变对象</td><br><td>L=[‘A’,’B’,’C’]</td><br><br><tr><br><td>tuple</td><br><td>不能更改，不可变对象</td><br><td>t=(1,)</td><br></tr><br><tr><br><td>dict</td><br><td>‘key-value’格式，key必须放入不可变对象</td><br><td>d={‘name’:’Tom’,’age’:’23’}</td><br></tr><br><tr><br><td>set</td><br><td>一组key的集合无value，无需不重复</td><br><td>s=([1,2,3])</td><br></tr><br></table>
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h2><p>查看官方文档：<a href="http://docs.python.org/3/library/functions.html#abs" target="_blank" rel="external">http://docs.python.org/3/library/functions.html#abs</a><br>数据类型转换</p>
+<pre><code>&gt;&gt;&gt;int(&apos;123&apos;)
+123
+&gt;&gt;&gt;str(100)
+&apos;100&apos;
+&gt;&gt;&gt;bool(&apos;&apos;)
+False
+</code></pre><p>函数名指向一个函数对象的引用，可以把函数名赋值给一个变量</p>
+<pre><code>&gt;&gt;&gt;a = abs #变量a指向abs函数
+&gt;&gt;&gt;a(-1) #所以也可以通过a调用abs函数
+1
+</code></pre><h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><p>定义函数需要确定函数名和参数个数</p>
+<pre><code>def 函数名(参数)
+    函数体
+</code></pre><p>若有必要可以先检查参数数据类（用if语句判断数据类型）<br>函数执行完毕也没有return语句时，自动<code>return None</code>。<br>函数可以返回多个值，其实际是一个<code>tuple</code>。<br><code>pass</code>可以用作占位符。<br>导入函数 <code>from abstest import my_abs</code>，通用格式是<code>from 不含.py的文件名 import 函数名</code></p>
+<h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><p>1.位置参数</p>
+<pre><code>def power(x):
+    return x*x
+</code></pre><p>对于power(x)是一个位置函数，调用power(x)函数时，必须传入有且仅有一个参数x。</p>
+<pre><code>def power(x,n):
+    s = 1
+    while n &gt; 0:
+        n = n - 1
+        s = s * n
+    return s
+</code></pre><p>两个位置参数x和n。<br>2.默认参数<br>(1)必选参数在前，默认参数在后<br>(2)如何设置默认函数？<br>当函数有多个参数时，变化大的参数放在前，变化小的参数就可以作为默认参数。<br>(3)使用默认参数有什么好处？<br>降低调用函数的难度。<br>默认参数必须指向不可变对象。</p>
+<pre><code>def power(x,n=2):
+        s = 1
+        while n &gt; 0:
+            n = n - 1
+            s = s * n
+        return s
+</code></pre><p>3.可变参数<br>可变参数指的是传入的参数可变，在一个list或tuple前加一个*号，把list货tuple的元素变成可变参数传进去。</p>
+<pre><code>numbers = [0,1,2,3,4,5,6,7,8,9]
+def calc(*numbers)
+    sum = 0
+    for n in numbers
+        sum = sum + n * n
+    return sum
+</code></pre><p>4.关键字参数<br>关键字参数可以扩展函数的功能，先组装出一个dict，把dict转换成关键字参数传进去，在dict前加**号。<br>示例</p>
+<pre><code>def person(name, age, **kw):
+    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
+</code></pre><p>举个栗子</p>
+<pre><code>&gt;&gt;&gt;extra = {&apos;city&apos;:&apos;Beijing&apos;,&apos;job&apos;:&apos;Engineer&apos;}
+&gt;&gt;&gt;person(&apos;Jack&apos;,24,**extra)
+name:Jack age:24 other:{&apos;city&apos;:&apos;Beijing&apos;,&apos;job&apos;:&apos;Engineer&apos;}
+</code></pre><p><strong>extra把extra这个dict的所有key-value用关键字参数传入函数</strong>kw函数，kw只是获得extra的一份拷贝，对kw改动并不会影响到函数外面的extra。</p>
+<p>5.命名关键字参数<br>函数调用者可以传入任意不受限制的关键字参数，对关键字参数进行检查：</p>
+<pre><code>def person(name,age,**kw)
+    if &apos;city&apos; in kw:
+        pass #验证是否有city
+    if &apos;job&apos; in kw:
+        pass #验证是否有job
+    print(&apos;name:&apos;,name,&apos;age:&apos;,age,&apos;other:&apos;,kw)
+</code></pre><p>若要限制关键字参数，则可以使用命名关键字参数。<br>def person(name,age,<em>,city,job)<br>    print(name,age,city,age)<br>命名关键字参数需要使用一个分隔符</em>，*后面的参数不变，视为命名关键字参数。调用如下：</p>
+<pre><code>&gt;&gt;&gt;person(&apos;Jack&apos;,24,city = &apos;Beijing&apos;,job = &apos;Engineer&apos;)
+Jack 24 Beijing Engineer
+</code></pre><p>若有一个可变参数，则后面跟着的命名关键字参数不需要*号分隔。</p>
+<pre><code>def person(name,age,*args,city,job):
+    print(name,age,args,city,job)
+</code></pre><p>命名关键字参数必须传入参数名，可以缺省（设置默认值），从而调用时可以不传入。</p>
+<p>6.参数组合<br>参数定义的顺序必选参数、默认参数、可变参数、命名关键字参数和关键字参数。</p>
+<pre><code>def f1(a,b,c = 0,*args,**kw):
+    print(&apos;a=&apos;,a,&apos;b=&apos;,b,&apos;c=&apos;,c,&apos;args=&apos;,args,&apos;kw=&apos;,kw)
+def f2(a,b,c = 0,*,d,**kw):
+    print(&apos;a=&apos;,a,&apos;b=&apos;,b,&apos;c=&apos;,c,&apos;d=&apos;,d,&apos;kw=&apos;,kw)
+</code></pre><p>通过一个tuple和dict也可以调用上述函数。对于任意函数都可以通过类似<code>func(*args,**kw)</code>的形式调用，无论参数如何定义。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/09/07/learning-python-0907/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/07/learning-python-0907/" itemprop="url">
+                  【9.7】Python学习笔记-python基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-07T14:06:11+08:00">
+                2016-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
         </div>
-    </a>
-
-</div>
-
-<hr>
+      </header>
+    
 
 
+    <div class="post-body" itemprop="articleBody">
 
-<div class="post-preview "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-image.jpg')">
-    <a href="/2016/09/07/learning-python-0907/">
-        <h2 class="post-title">
-            【9.7】Python学习笔记-python基础
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-09-07
-        </p>
+      
+      
+
+      
         
-        <div class="post-content-preview">
-            <p>
-                学习教程网站：廖雪峰python教程
-python基础数据类型与变量转义字符：\默认不转义：r&#39;\n\\&#39;字符串内部多行：
-&apos;&apos;&apos;line1
+          
+            <p>学习教程网站：<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰python教程</a></p>
+<h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><h2 id="数据类型与变量"><a href="#数据类型与变量" class="headerlink" title="数据类型与变量"></a>数据类型与变量</h2><p>转义字符：<code>\</code><br>默认不转义：<code>r&#39;\n\\&#39;</code><br>字符串内部多行：</p>
+<pre><code>&apos;&apos;&apos;line1
     line2
     line3&apos;&apos;&apos;
-空值None地板除，用//表示
-..
-            </p>
-        </div>
-    </a>
+</code></pre><p>空值<code>None</code><br>地板除，用<code>//</code>表示</p>
+<pre><code>&gt;&gt;&gt;10//3
+3
+</code></pre><h2 id="字符串和编码"><a href="#字符串和编码" class="headerlink" title="字符串和编码"></a>字符串和编码</h2><p>ACSII，1个字节<br>Unicode，通常2个字节，存在服务器，内存中<br>UTF-8，英文1个字节，汉字通常3字节<br>获取字符串整数 </p>
+<pre><code>&gt;&gt;&gt;ord(&apos;A&apos;)
+65
+</code></pre><p>编码转换成对应字符 </p>
+<pre><code>&gt;&gt;&gt;chr(25991)
+&apos;文&apos;
+</code></pre><p>要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。 <code>x = b&#39;ABC&#39;</code> bytes的每个字符只占用一个字节。<br>以Unicode表示的str通过encode()方法可以编码为指定的bytes。</p>
+<pre><code>&gt;&gt;&gt;&apos;ABC&apos;.encode(&apos;ascii&apos;)
+b&apos;ABC&apos;
+</code></pre><p>反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode()方法：</p>
+<pre><code>&gt;&gt;&gt;b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;.decode(&apos;utf-8&apos;)
+&apos;中文&apos;
+</code></pre><p>计算字符长度：<code>len(&#39;abc&#39;)</code><br>编码注释：<code>#-*- coding:utf-8 -*-</code><br>格式化字符串：%d-整数，%f-浮点数， %s-字符串，%x-十六进制整数</p>
+<pre><code>&gt;&gt;&gt;&apos;%.2f&apos; % 3.1415926
+&apos;3.14&apos;
+</code></pre><h2 id="使用list和tuple"><a href="#使用list和tuple" class="headerlink" title="使用list和tuple"></a>使用list和tuple</h2><p><strong>list</strong></p>
+<pre><code>&gt;&gt;&gt;list = [&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
+&gt;&gt;&gt;list[0]
+&apos;0&apos;
+&gt;&gt;&gt;list[-1]
+&apos;3&apos;
+</code></pre><p>添加元素：</p>
+<pre><code>&gt;&gt;&gt;list.append(&apos;4&apos;)
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;]
+</code></pre><p>指定位置插入元素：</p>
+<pre><code>&gt;&gt;&gt;list.insert(1,&apos;4&apos;)
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;4&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]
+</code></pre><p>删除末尾元素：</p>
+<pre><code>&gt;&gt;&gt;list.pop()
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;1&apos;,&apos;2&apos;]
+</code></pre><p>删除指定位置元素：</p>
+<pre><code>&gt;&gt;&gt;list.pop(1)
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;2&apos;,&apos;3&apos;]
+</code></pre><p>替换元素</p>
+<pre><code>&gt;&gt;&gt;list[1] = &apos;4&apos; #赋值
+&gt;&gt;&gt;list
+[&apos;0&apos;,&apos;4&apos;,&apos;2&apos;,&apos;3&apos;]
+</code></pre><p>list里的数据类型可以不同如<code>list = [&#39;0&#39;,123,True]</code><br>一个list也可以作为一个元素<code>s = [&#39;C&#39;,&#39;C++&#39;,[&#39;Java&#39;,&#39;Python&#39;]]</code>,相当于</p>
+<pre><code>&gt;&gt;&gt;p = [&apos;Java&apos;,&apos;Python&apos;]
+&gt;&gt;&gt;s = [&apos;C&apos;,&apos;C++&apos;,p]
+</code></pre><p>若list中一个元素都没有，<code>list = []</code>，长度为0，<code>len(list) = 0</code><br><strong>tuple</strong></p>
+<pre><code>tuple = (&apos;0&apos;,&apos;1&apos;,&apos;2&apos;)
+</code></pre><p>一旦初始化后不能修改，没有替换，删除等用法，获取元素方法相同如<code>tuple[0] = &#39;0&#39;</code>，因其不可更改所以代码更安全，尽量使用tuple<br>tuple的陷阱<br>定义空的tuple，写成</p>
+<pre><code>&gt;&gt;&gt;t = ()
+&gt;&gt;&gt;t
+()
+</code></pre><p>定义只包含一个元素的tuple</p>
+<pre><code>&gt;&gt;&gt;t = (1)
+&gt;&gt;&gt;t
+1
+</code></pre><p>这个是错误的，因为()既可以表示tuple，也可以表示数学意义上的小括号，python规定，按小括号计算，所以表示只包含一个元素的tuple需要加一个逗号</p>
+<pre><code>&gt;&gt;&gt;t = (1,)
+&gt;&gt;&gt;t
+(1,)
+</code></pre><p>可变的tuple</p>
+<pre><code>&gt;&gt;&gt;t = (&apos;a&apos;,&apos;b&apos;,[&apos;A&apos;,&apos;B&apos;])
+&gt;&gt;&gt;t[2][0] = &apos;X&apos;
+&gt;&gt;&gt;t[2][2] = &apos;Y&apos;
+&gt;&gt;&gt;t
+(&apos;a&apos;,&apos;b&apos;,[&apos;X&apos;,&apos;Y&apos;])
+</code></pre><p>改变的只是tuple中的list，并不是tuple的元素（指向不变）<br>创建一个不变的tuple，就要保证tuple每个元素不可变<br>整数，浮点数，字符串都是不可变对象</p>
+<p>list和tuple是python内置的有序集合，list可变，tuple不可变，分情况使用。</p>
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><pre><code>if &lt;条件判断1&gt;:
+    &lt;执行语句1&gt;
+elif &lt;条件判断2&gt;:
+    &lt;执行语句2&gt;
+else:
+    &lt;执行语句3&gt;
+</code></pre><p>if语句从上往下判断，若在某个上判断为True，就忽略剩下的elif和else语句。</p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>for…in循环<br>依次把list或tuple中的每一个元素迭代出来<br>range()函数可以生成一个整数序列</p>
+<pre><code>&gt;&gt;&gt;list(range(5))
+[0,1,2,3,4]
+</code></pre><p>while循环</p>
+<pre><code>while &lt;条件判断&gt;:
+    循环体
+</code></pre><h2 id="使用dict和set"><a href="#使用dict和set" class="headerlink" title="使用dict和set"></a>使用dict和set</h2><p><strong>dict</strong>（字典，dictionary）<br>使用key-value存储，具有极快查找速度</p>
+<pre><code>&gt;&gt;&gt;d = {&apos;Tom&apos;:95,&apos;Sam&apos;:75,&apos;John&apos;:85}
+&gt;&gt;&gt;d[&apos;Tom&apos;]
+95
+</code></pre><p>将数据放入dict中，除了初始化外，也可以通过key放入</p>
+<pre><code>&gt;&gt;&gt;d[&apos;Sam&apos;] = 99
+&gt;&gt;&gt;d[&apos;Sam&apos;]
+99
+</code></pre><p>一个key只能对应一个value，多次对一个key放入value，会被覆盖<br>key不存在时，dict会报错，避免key不存在的检测方法：</p>
+<p>1.通过in来判断key</p>
+<pre><code>&gt;&gt;&gt;&apos;John&apos; in d
+True
+</code></pre><p>2.通过dict提供的get方法，不存在返回None，也可指定value</p>
+<pre><code>&gt;&gt;&gt;d.get[&apos;Tom&apos;]
+&gt;&gt;&gt;d.get[&apos;Tom&apos;,90]
+90
+</code></pre><p>删除key，用pop(key)的方法</p>
+<pre><code>&gt;&gt;&gt;d.pop(&apos;Tom&apos;)
+95
+&gt;&gt;&gt;d
+{&apos;Sam&apos;:75,&apos;John&apos;:85}
+</code></pre><p>dict内部存放顺序和key放入顺序无关<br>key必须是不可变对象，list可变所以不可以作为key<br><strong>set</strong><br>set与dict类似，也是一组key的集合，但不存储value，且key不重复,重复元素被过滤</p>
+<pre><code>&gt;&gt;&gt;s = set([1,2,3])
+&gt;&gt;&gt;s
+{1,2,3}
+</code></pre><p>通过<code>add(key)</code>添加元素<br>通过<code>remove(key)</code>删除元素<br>set可以看成数学意义上的无序且无重复元素的集合，因此两个set可以做数学意义上的交集和并集。<br>set也同dict一样，同样不可以放入可变对象，tuple虽然是不可变对象，但其元素可能包含可变对象list<br>不可变对象（str操作）</p>
+<pre><code>&gt;&gt;&gt;a = &apos;abc&apos;
+&gt;&gt;&gt;b = a.replace(&apos;a&apos;,&apos;A&apos;)
+&gt;&gt;&gt;b
+&apos;Abc&apos;
+&gt;&gt;&gt;a
+&apos;abc&apos;
+</code></pre><p><img src="http://cdn.onetea.pw/python_set_0.jpg" alt="此处输入图片的描述"><br>对不可变对象来说，调用对象自身的任意方法，不会改变该对象自身的内容，这些方法只会创建新的对象并返回。</p>
 
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-image.jpg')">
-    <a href="/2016/08/31/hexo-install-with-Github-Pages-1/">
-        <h2 class="post-title">
-            运用Github Pages和Hexo搭建静态博客
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-08-31
-        </p>
+          
         
-        <div class="post-content-preview">
-            <p>
-                一、前言这是一篇使用Github Page和Hexo搭建静态博客的自我总结，在搭建过程中出现的问题也会进行补充。我是一个计算机小白，CSDN和LOFTER等博客，不能说改就改，所以搭建一个属于自己的博客感觉很炫酷。如果你初次接触，先看看下面一些文档，有助于你更好的操作，本教程只针对Windows..
-            </p>
-        </div>
-    </a>
+      
+    </div>
 
-</div>
+    <div>
+      
+    </div>
 
-<hr>
+    <div>
+      
+    </div>
 
 
+    <footer class="post-footer">
+      
 
-<div class="post-preview "
-     style="background-image: url('http://7te822.com1.z0.glb.clouddn.com/default-bgimage.png')">
-    <a href="/2016/08/30/how-to-use-kindle-1/">
-        <h2 class="post-title">
-            Kindle初级使用简要说明
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-08-30
-        </p>
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/08/31/hexo-install-with-Github-Pages-1/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
         
-        <div class="post-content-preview">
-            <p>
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 
-就在一个月前我入手了第一台电子书——kindle，别提有多兴奋，也激起了我一定要把买kindle的钱看回来。到货的那天刚好是周末，不知道周末圆通单位地址的不给派送，我当时那个恼火啊，叫了个滴滴去圆通公司取快递，心累！毫不夸张的说，最初拿到kindle，上面的壁纸，我以为是膜，摸上去，那手感——..
-            </p>
+                <a class="post-title-link" href="/2016/08/31/hexo-install-with-Github-Pages-1/" itemprop="url">
+                  运用Github Pages和Hexo搭建静态博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-31T16:55:03+08:00">
+                2016-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
         </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
+      </header>
     
-    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、前言<br>这是一篇使用Github Page和Hexo搭建静态博客的自我总结，在搭建过程中出现的问题也会进行补充。<br>我是一个计算机小白，CSDN和LOFTER等博客，不能说改就改，所以搭建一个属于自己的博客感觉很炫酷。<br>如果你初次接触，先看看下面一些文档，有助于你更好的操作，本教程只针对Windows用户。</p>
+<ul>
+<li><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Git</a> </li>
+<li><a href="https://github.com/" target="_blank" rel="external">Github</a> </li>
+<li><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> </li>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> </li>
+<li><a href="http://www.appinn.com/markdown/#autoescape" target="_blank" rel="external">Markdown语法</a><br>对于搭建教程和使用更多可以参考以下网站：</li>
+<li><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官方文档</a></li>
+<li><a href="https://www.zhihu.com/topic/19851557/hot" target="_blank" rel="external">知乎Hexo话题</a></li>
 </ul>
+<p>二、Git<br>2.1 安装Git<br>官方网站下载安装<a href="http://git-scm.com/download/win" target="_blank" rel="external">Git</a><br>2.2 创建一个仓库<br>在自己的GitHub账号下创建一个新的仓库，命名为username.github.io（username是你的账号名)。<br>2.3 配置Git<br>2.3.1 设置用户名及Email<br>安装完成后需要配置你的Git，就是设置你的用户名和Email，在任意位置右键选择Git Bash，键入</p>
+<pre><code>$ git config --global user.name &quot;username&quot;
+$ git config --global user.email &quot;username@example.com&quot;
+</code></pre><p>2.3.2 SSH配置<br>为了能在本地使用Git管理Github上面的项目，我们进行SSH key配置。<br>2.3.2.1检查电脑是否有SSH key</p>
+<pre><code>$ ls -al ~/.ssh
+</code></pre><p>如果提示列出文件id_ras.pub和id_rsa，证明已存在SSH key。<br>2.3.2.2 若没有SSH key，生成新的</p>
+<pre><code>$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
+</code></pre><p>之后一路回车就可以了。<br>2.3.2.3 向ssh-agent添加key。<br>首先确保ssh-agent可运行：</p>
+<pre><code>$ ssh-agent -s
+</code></pre><p>然后添加SSH key：</p>
+<pre><code>$ ssh-add ~/.ssh/id_rsa
+</code></pre><p>2.3.2.4 向Github添加SSH key。<br>首先，拷贝key：</p>
+<pre><code>clip &lt; ~/.ssh/id_rsa.pub
+</code></pre><p>然后，在GitHub右上方点击头像，选择”Settings”，在右边的”SSH and GPG keys”,点击”New SSH key”按钮，添加上去。测试：</p>
+<pre><code>$ ssh -T git@github.com
+</code></pre><p>一直回车，最后输入yes，出现这个就是成功了。</p>
+<pre><code>Hi username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>三、Hexo<br>3.1 安装Hexo<br>安装之前需要在电脑上安装好以下程序：</p>
+<ul>
+<li><a href="http://git-scm.com/download/win" target="_blank" rel="external">Git</a> </li>
+<li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> </li>
+</ul>
+<p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><p>3.2 建站<br>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<pre><code>$ hexo init folder&gt;
+$ cd &lt;folder&gt;
+$ npm install
+</code></pre><p>这样，我们就已经搭建起本地的Hexo博客了。可以先在对应文件夹下执行以下命令，然后再浏览器输入localhost:4000查看。</p>
+<pre><code>$ hexo generate
+$ hexo server
+</code></pre><p>3.3 配置Hexo<br>打开Hexo根目录下的_config.yml，修改以下代码：</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:username/username.github.io.git
+  branch: master
+</code></pre><p>为了能够使Hexo部署到GitHub上，需要安装一个插件：</p>
+<pre><code>$ npm install hexo-deployer-git --save
+</code></pre><p>然后，执行下列指令即可完成部署：</p>
+<pre><code>$ hexo generate
+$ hexo deploy
+</code></pre><p>之后，可以通过在浏览器键入：username.github.io进行浏览。<br>你已成功完成博客的创建，现在头等大事就是编写属于你自己的文章了，现在开始动手吧。</p>
 
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
-                    
-                    <img src="http://7te822.com1.z0.glb.clouddn.com/avatar.jpg"/>
-                    
-                    <h5><a href="/about/">Bowen</a></h5>
-                    
-                    <p>计算机小白、学习在路上</p>
-                    
-                    <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://twitter.com/ehazon">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://www.zhihu.com/people/megahertz">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-
-                        
-                        <li>
-                            <a target="_blank" href="http://weibo.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-
-                        
-
-                        
-                        <li>
-                            <a target="_blank" href="https://github.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-
-                        
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-            <section>
-                <div class="tags">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#python" title="python"
-                       rel="3">python</a>
-                    
-                    
-                    
-                    <a href="/tags/#学习笔记" title="学习笔记"
-                       rel="2">学习笔记</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                </div>
-            </section>
-            
-
-            
-
-        </div>
+          
+        
+      
     </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://codingwithme.github.io/2016/08/30/how-to-use-kindle-1/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Bowen">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="博文">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="博文" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/30/how-to-use-kindle-1/" itemprop="url">
+                  Kindle初级使用简要说明
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-30T09:34:34+08:00">
+                2016-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://7te822.com1.z0.glb.clouddn.com/how-to-use-kindle.jpg" alt="此处输入图片的描述"></p>
+<p>就在一个月前我入手了第一台电子书——kindle，别提有多兴奋，也激起了我一定要把买kindle的钱看回来。到货的那天刚好是周末，不知道周末圆通单位地址的不给派送，我当时那个恼火啊，叫了个滴滴去圆通公司取快递，心累！毫不夸张的说，最初拿到kindle，上面的壁纸，我以为是膜，摸上去，那手感——就像触摸在时间上。首先这不是开箱贴<br>，只是把自己在最初使用kindle的摸索情况做个小总结，也是给初级使用kindle的小伙伴的指南。</p>
+<p>先安利一个kindle必备的网站：<a href="http://kindlefere.com/" target="_blank" rel="external">kindle伴侣</a>，谁用谁知道。</p>
+<p>一、kindle书籍获取</p>
+<p>1、<a href="https://www.amazon.cn/Kindle%E7%94%B5%E5%AD%90%E4%B9%A6/b/ref=sa_menu_kindle_l2_116169071?ie=UTF8&amp;node=116169071" target="_blank" rel="external">亚马逊商店</a></p>
+<p><a href="https://www.amazon.cn/Kindle%E5%85%8D%E8%B4%B9%E7%94%B5%E5%AD%90%E4%B9%A6/b/ref=amb_link_102017812_3?ie=UTF8&amp;node=116175071&amp;pf_rd_m=A1AJ19PSB66TGU&amp;pf_rd_s=merchandised-search-leftnav&amp;pf_rd_r=RRZ7ZREB1YN5CMG2VK4D&amp;pf_rd_t=101&amp;pf_rd_p=288958792&amp;pf_rd_i=116169071" target="_blank" rel="external">亚马逊特价商店</a></p>
+<p><a href="http://t.bookdna.cn/" target="_blank" rel="external">亚马逊特价书库(非官方)</a></p>
+<p>2、邮箱推送</p>
+<p>在亚马逊中添加你的邮箱到白名单中，就可以从你的邮箱推送pdf、doc、html、rtf、jpeg、mobi、gif、png、bmp等格式，注意使用添加附加，不要使用添加超大附件。</p>
+<p>3、网站资源</p>
+<p> <a href="http://www.kindlepush.com" target="_blank" rel="external">Kindle推：http://www.kindlepush.com</a></p>
+<p> <a href="http://kankandou.com/" target="_blank" rel="external">看看豆：http://kankandou.com/</a></p>
+<p> <a href="https://www.jiumodiary.com/" target="_blank" rel="external">鸠摩搜书：https://www.jiumodiary.com/</a></p>
+<p> <a href="https://kindleren.com/forum.php" target="_blank" rel="external">Kindle人社区：https://kindleren.com/forum.php</a></p>
+<p>4、kindle公众号：<a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzAxMTAzNDM2OQ==&amp;scene=110#wechat_redirect" target="_blank" rel="external">cn_kindle</a></p>
+<p>如果不差钱，尽量购买正版书籍，正版排版比较完善，阅读起来也比较舒服。</p>
+<p>二、一些小技巧</p>
+<p>1、不要纠结是越狱刷多看还是用原生，记住你买的kindle是用来看书的，不是折腾设备的，毕竟kindle不是为发烧而生#(手动滑稽)。</p>
+<p>2、喜欢看杂志的可以去狗耳朵等网站去订阅，也可以自己搭建一个kindleEar平台，后续有时间可以做一个搭建教程。自我感觉，kindle并不适合看杂志。</p>
+<p>3、kindle尽量开启飞行模式，不然很耗电，尽量不要在充电的时候使用kindle。</p>
+<p>4、截图，同时点击右上角和左下角，即对角线同时点下就可以了。</p>
+<p>5、最重要的，就是把时间和精力都放在读书上，而不是折腾设备上，就酱。</p>
+<p>三、自己一些感悟</p>
+<p>自从买了kindle，也给了自己一种动力去读书，去沉淀下来。尤其是毕业后，愈发感觉无知，并且时间不够用，自己完全是一个小白，通过微信公众号、博客，写点读书笔记，强迫自己有所输出，把读到的、看到的化成自己的见解，自己的知识。在这一方面，我才刚刚起步，用这张图来结束这篇文章。<br><a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzIxMTE3NjA0OA==&amp;scene=110#wechat_redirect" target="_blank" rel="external">戳这里关注小站微信公众号</a><br><img src="http://7te822.com1.z0.glb.clouddn.com/how-to-use-kindle-2.jpg" alt="此处输入图片的描述"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Bowen" />
+          <p class="site-author-name" itemprop="name">Bowen</p>
+          <p class="site-description motion-element" itemprop="description">做一根有思想的芦苇</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bowen</span>
 </div>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
-                <ul class="list-inline text-center">
-                
-                
-                    <li>
-                        <a target="_blank" href="https://twitter.com/ehazon">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
-                
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                
 
-                
-                    <li>
-                        <a target="_blank" href="http://weibo.com/haojen">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-                
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
 
-                
-                    <li>
-                        <a target="_blank"  href="https://github.com/haojen">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
 
-                
+        
 
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; 博文 2016
-                    <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
-                    <br>
-                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
-                </p>
+        
+      </div>
+    </footer>
 
-            </div>
-        </div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
-</footer>
+  </div>
 
-<!-- jQuery -->
-<script src="/js/jquery.min.js"></script>
+  
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/blog.js"></script>
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://codingwithme.github.io/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-<!-- Google Analytics -->
-
-
-
-<!-- Baidu Tongji -->
-
-
-<!-- swiftype -->
 <script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install','null','2.0.0');
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<!--wechat title img-->
-<img class="wechat-title-img" src="http://7te822.com1.z0.glb.clouddn.com/avatar.jpg">
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
 </body>
-
 </html>
